@@ -1,4 +1,5 @@
 import headerStyles from "@/styles/header.module.css"
+import {ColorModeToggle} from "@/components/global/ColorModeToggle";
 
 export const Header = () => {
   return (
@@ -9,6 +10,7 @@ export const Header = () => {
           <li className={headerStyles.listItem}>Cursus</li>
           <li className={headerStyles.listItem}>CV</li>
           <li className={headerStyles.listItem}>Contact</li>
+          <li><ColorModeToggle/></li>
         </ul>
       </div>
     </header>
