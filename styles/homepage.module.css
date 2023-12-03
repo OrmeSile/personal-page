@@ -1,0 +1,22 @@
+.main {
+    height: 200vh;
+    display: flex;
+    width: 100vw;
+    flex-flow: column nowrap;
+    background: white;
+    box-shadow: 0 0 10px 5px rgb(0, 0, 0, 0.4);
+    @media screen and (min-width: 768px) {
+        max-width: 1280px;
+        width: 80vw;
+        margin: auto;
+    }
+}
+
+.background {
+    max-width: 1280px;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    display: flex;
+
+}
