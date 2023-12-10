@@ -1,11 +1,17 @@
-import backgroundImage from "@/public/images/portfolio-background.png";
+'use client'
+import backgroundImage from "@/public/images/portfolio-background.webp";
 import Image from "next/image";
 import homepageStyles from "@/styles/homepage.module.css"
+import {Header} from "@/components/global/Header";
+import {themeStore} from "@/stores/themeStore";
+import {Provider} from "react-redux";
 
 export default function Home() {
 
   return (
-    <main className={homepageStyles.main}>
+    <>
+      <Header/>
+      <main className={homepageStyles.main}>
         <Image
           className={homepageStyles.background}
           src={backgroundImage}
@@ -14,6 +20,7 @@ export default function Home() {
           placeholder={"blur"}
           sizes={"(max-width: 768px) 100vw, 80vw"}
         />
-    </main>
+      </main>
+    </>
   )
 }
