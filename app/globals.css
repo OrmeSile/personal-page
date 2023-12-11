@@ -1,16 +1,22 @@
 html {
     font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    @media screen and (min-width: 768px) {
+        overflow-x: visible;
+    }
 }
 
 body {
     z-index: -20;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    transition: .2s;
 }
 a {
     color: rgb(49, 137, 199)

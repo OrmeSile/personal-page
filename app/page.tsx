@@ -16,8 +16,8 @@ export default function Home() {
           className={homepageStyles.background}
           src={backgroundImage}
           alt={''}
-          priority={true}
           placeholder={"blur"}
+          loading={"eager"}
           sizes={"(max-width: 768px) 100vw, 80vw"}
         />
       </main>

@@ -20,7 +20,7 @@
     transition: .2s;
     filter: var(--img-brightness);
     object-fit: contain;
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
 

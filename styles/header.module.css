@@ -1,31 +1,52 @@
-.container{
-    position: absolute;
+.container {
     z-index: 10;
     width: 0;
-    overflow: hidden;
+    position: absolute;
+    right: 0;
     @media screen and (min-width: 768px) {
-        height: 4em;
+        overflow: hidden;
         top: 2em;
-        /*height: 5em;*/
-        /*box-sizing: border-box;*/
-        /*display: flex;*/
-        /*position: absolute;*/
-        /*width: 100%;*/
-        /*top: 0;*/
-        /*z-index: 10;*/
+        height: 5em;
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
     }
 }
 
-.child {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+.menu:has(.input:checked)+ .child {
+    margin: 0;
+    transform: translateX(-50vw);
     background: var(--bg-secondary);
-    box-shadow: 0 2px 10px 2px rgba(0,0,0,0.5);
+    width: 50vw;
+    visibility: visible;
     @media screen and (min-width: 768px) {
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
+        transform: none;
+        width: auto;
+        margin: auto;
+    }
+}
+
+.menu:has(.input:checked) {
+    border: var(--btn-primary) 2px solid;
+    border-radius: 50%;
+}
+
+.child {
+    position: absolute;
+    height: 100vh;
+    transition: .2s ease-out;
+    overflow: hidden;
+    display: flex;
+    width: 0;
+    align-items: flex-start;
+    background: var(--bg-secondary);
+    @media screen and (min-width: 768px) {
+        align-items: center;
+        justify-content: center;
+        position: initial;
+        transition: none;
+        height: 5em;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
         border-radius: 0.5em;
         width: auto;
         padding: 0 2em;
@@ -33,25 +54,38 @@
     }
 }
 
+
 .list {
-    gap: 1em;
     list-style: none;
-    padding: 0;
     margin: 0;
     display: flex;
-    height: 100%;
+    height: auto;
     align-items: center;
     flex-flow: column nowrap;
-    @media screen and (max-width: 768px) {
-
+    padding: 5em 5em;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        padding: 0;
+        flex-flow: row nowrap;
+        gap: 1em;
+        width: auto;
     }
 }
 
 .listItem {
+    padding: 2em 0;
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    width: 100%;
+    gap: 0;
+    @media screen and (min-width: 768px) {
+        padding: 0;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .title {
@@ -62,6 +96,7 @@
 }
 
 .menu {
+    z-index: 100;
     --menu-toggle-side: 3rem;
     cursor: pointer;
     position: absolute;
@@ -70,36 +105,44 @@
     width: var(--menu-toggle-side);
     height: var(--menu-toggle-side);
     display: flex;
-    justify-content: center;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
     align-items: center;
-    border: darkblue solid 2px;
+    background: var(--bg-secondary);
+    transition: .2s;
+    @media screen and (min-width: 768px) {
+        display: none;
+        transition: none;
+    }
+
+}
+
+.input:checked + .menuOpen + .menuOpen + .menuOpen {
+    transform: translateY(-0.8rem) rotate(-45deg);
+}
+
+.input:checked + .menuOpen + .menuOpen {
+    transform: rotate(45deg);
+}
+
+.input:checked + .menuOpen {
+    transform: translateY(0.8rem) rotate(45deg);
+}
+
+.input {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
 }
 
 .menuOpen {
-    top: calc(var(--menu-toggle-side) / 6 * 2);
-    position: absolute;
-    width: calc(var(--menu-toggle-side) / 6 * 4);
-    background-color: var(--text-primary);
+    transition: .2s;
+    box-sizing: border-box;
+    display: inline-block;
+    flex-flow: column nowrap;
+    height: 0.3rem;
+    width: 2rem;
+    background-color: var(--btn-primary);
     border-radius: 1rem;
-    height: calc(var(--menu-toggle-side) / 9);
-}
-.menuOpen::before {
-    top: calc(var(--menu-toggle-side) / 6);
-    background-color: #AAA;
-    position: absolute;
-    content: '';
-    border-radius: 1rem;
-    width: calc(var(--menu-toggle-side) / 6 * 4);
-    height: calc(var(--menu-toggle-side) / 9);
-
-}
-
-.menuOpen::after {
-    top: calc(var(--menu-toggle-side) / 6 * 2);
-    background-color: var(--text-primary);
-    position: absolute;
-    content: '';
-    border-radius: 1rem;
-    width: calc(var(--menu-toggle-side) / 6 * 4);
-    height: calc(var(--menu-toggle-side) / 9);
 }
