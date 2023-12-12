@@ -13,17 +13,12 @@
     }
 }
 
-.menu:has(.input:checked)+ .child {
+.menu:has(.input:checked) + .child {
     margin: 0;
     transform: translateX(-50vw);
     background: var(--bg-secondary);
     width: 50vw;
     visibility: visible;
-    @media screen and (min-width: 768px) {
-        transform: none;
-        width: auto;
-        margin: auto;
-    }
 }
 
 .menu:has(.input:checked) {
@@ -32,26 +27,8 @@
 }
 
 .child {
-    position: absolute;
-    height: 100vh;
-    transition: .2s ease-out;
-    overflow: hidden;
     display: flex;
-    width: 0;
-    align-items: flex-start;
     background: var(--bg-secondary);
-    @media screen and (min-width: 768px) {
-        align-items: center;
-        justify-content: center;
-        position: initial;
-        transition: none;
-        height: 5em;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
-        border-radius: 0.5em;
-        width: auto;
-        padding: 0 2em;
-        margin: auto;
-    }
 }
 
 
@@ -96,25 +73,13 @@
 }
 
 .menu {
-    z-index: 100;
-    --menu-toggle-side: 3rem;
-    cursor: pointer;
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
     width: var(--menu-toggle-side);
     height: var(--menu-toggle-side);
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
-    align-items: center;
     background: var(--bg-secondary);
-    transition: .2s;
+    display: flex;
     @media screen and (min-width: 768px) {
         display: none;
-        transition: none;
     }
-
 }
 
 .input:checked + .menuOpen + .menuOpen + .menuOpen {

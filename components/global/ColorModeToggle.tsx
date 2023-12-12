@@ -13,11 +13,25 @@ export const ColorModeToggle = () => {
 
   const theme = useSelector((state: RootState) => state.theme.value)
   const dispatch = useDispatch()
-  const [isChecked, setIsChecked] = useState<boolean>(window.localStorage.getItem('color-mode') === 'light')
+  const [isChecked, setIsChecked] = useState(false)
+  const [isClient, setIsClient] = useState(false)
+
   useEffect(() => {
     const initialTheme = window.localStorage.getItem('color-mode')!
+    console.log(initialTheme)
     dispatch(init(initialTheme))
+    console.log(isChecked)
+
+    setIsChecked(initialTheme === 'light')
+    console.log(isChecked)
+    setIsClient(true)
   }, []);
+
+  const handleChange = () => {
+    const initialTheme = window.localStorage.getItem('color-mode')!
+    setIsChecked(initialTheme === 'light')
+  }
+
 
   const handleClick = () => {
     setIsChecked(!isChecked)
@@ -26,12 +40,18 @@ export const ColorModeToggle = () => {
   }
   return (
     <>
-      <IconSurroundedToggle
-        beforeIconSource={moon}
-        afterIconSource={sun}
-        isChecked={isChecked}
-        handleClick={handleClick}
-      />
+      {isClient ?
+        (<IconSurroundedToggle
+            beforeIconSource={moon}
+            afterIconSource={sun}
+            isChecked={isChecked}
+            handleClick={handleClick}
+            onChange={handleChange}
+          />
+        ) : (
+          <IconSurroundedToggle disabled={true}/>
+        )
+      }
     </>
   )
 }

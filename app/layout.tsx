@@ -5,8 +5,6 @@ import {
   FallbackStyles, StyleInjector,
   StyleProvider
 } from "@/components/theme/StyleInjector";
-import Script from "next/script";
-import dynamic from "next/dynamic";
 
 
 const inter = Inter({subsets: ['latin']})
