@@ -4,22 +4,14 @@ html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    @media screen and (min-width: 768px) {
-        overflow-x: visible;
-    }
 }
 
 body {
-    z-index: -20;
     margin: 0;
     padding: 0;
-    width: 100%;
-    background-color: var(--bg-primary);
+    height: 0;
+    background-color: var(--bg-tertiary);
     color: var(--text-primary);
-    height: 100vh;
-    @media screen and (min-width: 768px) {
-        height: 100%;
-    }
 }
 
 a {

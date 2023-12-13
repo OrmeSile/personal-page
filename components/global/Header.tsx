@@ -1,17 +1,17 @@
+'use client'
 import headerStyles from "@/styles/header.module.css"
-import dynamic from "next/dynamic";
 import {useIsLargeMediaQuery} from "@/hooks/useIsLargeMediaQuery";
+import React, {useEffect, useState} from "react";
+import {ColorModeToggle} from "@/components/global/ColorModeToggle";
+import {NavItem} from "@/components/global/NavItem";
+
 
 export const Header = () => {
-  // const ColorModeToggle = dynamic(() => import('../global/ColorModeToggle').then(mod => mod.ColorModeToggle), {
-  //   ssr: false,
-  //   loading: () => <IconSurroundedToggle disabled={true}/>
-  // })
   const [isChecked, setIsChecked] = useState(false)
   const isLarge = useIsLargeMediaQuery()
-  useEffect(( )=> {
-    if(!isLarge) setIsChecked(false)
-  },[isLarge] )
+  useEffect(() => {
+    if (!isLarge) setIsChecked(false)
+  }, [isLarge])
 
   const largeStyles = isLarge ? {
     menu: {
@@ -94,22 +94,16 @@ export const Header = () => {
           style={{...largeStyles.child, ...checkedStyles.child}}
           className={headerStyles.child}>
           <ul className={headerStyles.list}>
-            <li className={headerStyles.listItem}>Projets</li>
-            <li className={headerStyles.listItem}>Cursus</li>
-            <li className={headerStyles.listItem}>CV</li>
-            <li className={headerStyles.listItem}>Contact</li>
-            <li className={headerStyles.listItem}>
-              <div>
-                <ColorModeToggle/>
-              </div>
-            </li>
+            <NavItem link={'jkjkjk'} text={'Projets'}/>
+            <NavItem text={'Cursus'}/>
+            <NavItem text={'CV'}/>
+            <NavItem text={'Contact'}/>
+            <NavItem>
+              <ColorModeToggle/>
+            </NavItem>
           </ul>
         </div>
       </header>
     </>
   )
 }
-import {IconSurroundedToggle, Toggle} from "@/components/toggle/Toggle"
-
-import React, {ChangeEvent, useCallback, useEffect, useState} from "react";
-import {ColorModeToggle} from "@/components/global/ColorModeToggle";

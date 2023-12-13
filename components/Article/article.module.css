@@ -1,0 +1,46 @@
+.article {
+    background: var(--bg-primary);
+    display: flex;
+    padding: 2rem;
+    margin: 0 1rem;
+    border-radius: 1em 1em 0 0;
+    flex-flow: column nowrap;
+    gap :1rem;
+    @media screen and (min-width: 768px) {
+        margin: 0 2em;
+    }
+}
+
+.cardImageContainer {
+    position: relative;
+    aspect-ratio: 3/2;
+}
+
+.cardImage {
+}
+
+.section {
+    width: 100%;
+}
+
+.title {
+
+}
+
+.card {
+    min-width: 30%;
+    aspect-ratio: 5/2;
+    position: relative;
+    padding: 2em;
+    border: solid 1px var(--btn-secondary);
+    border-radius: 1em;
+}
+
+.cardContainer {
+    gap: 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+   @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
