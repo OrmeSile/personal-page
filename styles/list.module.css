@@ -1,0 +1,20 @@
+.navItem {
+    padding: 2em 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    gap: 0;
+    @media screen and (min-width: 768px) {
+        padding: 0;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.hover:hover {
+    @media (hover: hover) and (pointer: fine) {
+        background-color: var(--accent-color);
+    }
+}
