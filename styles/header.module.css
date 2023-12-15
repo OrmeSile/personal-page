@@ -49,6 +49,9 @@
     }
 }
 
+.test {
+    background: red;
+}
 
 .checkbox {
     display: none;
@@ -62,6 +65,48 @@
     @media screen and (min-width: 768px) {
         display: none;
     }
+}
+
+.menu-large{
+    transition: none;
+}
+
+.menu-small{
+    z-index: 100;
+    --menu-toggle-side: 3rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: var(--menu-toggle-side);
+    height: var(--menu-toggle-side);
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: .2s;
+}
+
+.child .large{
+    align-items: center;
+    justify-content: center;
+    position: initial;
+    transition: none;
+    height: 5rem;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
+    border-radius: .5rem;
+    width: auto;
+    padding: 0 2rem;
+    margin: auto;
+}
+
+.child-small {
+    position: absolute;
+    height: 100vh;
+    transition: .2s ease-out;
+    overflow: hidden;
+    width: 0;
+    align-items: flex-start;
+    background: var(--bg-secondary);
 }
 
 .input:checked + .menuOpen + .menuOpen + .menuOpen {

@@ -70,6 +70,8 @@ export default function Home() {
               </ProjectCard>
             </GridContainer>
           </Section>
+        </Article>
+        <Article>
           <Section id={'cursus'} title={'Cursus'}>
 
           </Section>

@@ -4,6 +4,6 @@ const josefinSans = Josefin_Sans({subsets: ['latin']})
 export const Brand = ({name, subtext}:{name: string, subtext: string}) => {
   return <div className={`${brandStyles.container} ${josefinSans.className}`}>
     <h1 className={brandStyles.title}>{name}</h1>
-    <h3 className={brandStyles.subtext}>{subtext}</h3>
+    <h2 className={brandStyles.subtext}>{subtext}</h2>
   </div>
 }

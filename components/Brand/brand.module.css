@@ -1,28 +1,30 @@
 .container {
     display: flex;
     flex-flow: column nowrap;
-    aspect-ratio: 4/2;
+    aspect-ratio: 5/2;
     justify-content: flex-end;
-    padding: 3rem 3rem;
     align-items: center;
     margin-bottom: 2rem;
-    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 50%);
     @media screen and (min-width: 768px) {
+        z-index: 1;
         font-size: 4rem;
         align-items: flex-start;
+        padding: 3rem;
     }
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent 50%);
 }
 
 .title {
+    text-align: center;
+    width: 100%;
     position: relative;
     color: var(--title-color);
-    font-size: 10vw;
+    font-size: 4rem;
     margin: 0;
     white-space: nowrap;
     @media screen and (min-width: 768px) {
-        font-size: 4rem;
         padding: 0 0 0 2rem;
+        text-align: left;
     }
 }
 

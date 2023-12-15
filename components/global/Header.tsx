@@ -93,7 +93,7 @@ export const Header = () => {
         <div
           style={{...largeStyles.child, ...checkedStyles.child}}
           className={headerStyles.child}>
-          <ul className={headerStyles.list}>
+          <ul className={`${headerStyles.list}  ${!isLarge}`}>
             <NavItem link={'jkjkjk'} text={'Projets'}/>
             <NavItem text={'Cursus'}/>
             <NavItem text={'CV'}/>

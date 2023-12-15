@@ -22,6 +22,7 @@ export const ProjectCard = (
         className={articleStyles.cardImageContainer}
       >
         <Image
+          sizes="(max-width: 768px) , "
           src={src}
           alt={alt}
           fill={true}
@@ -29,13 +30,13 @@ export const ProjectCard = (
           className={articleStyles.cardImage}
         />
       </div>
-      <section>
-        <h2>{title}</h2>
-        {children}
-        <Link href={link}>
-          Lien
-        </Link>
-      </section>
+      <div className={articleStyles.cardContent}>
+      <h3>{title}</h3>
+      {children}
+      <Link href={link}>
+        Lien
+      </Link>
+      </div>
     </div>
   )
 }
