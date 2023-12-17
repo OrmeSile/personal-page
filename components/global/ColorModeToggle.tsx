@@ -1,6 +1,6 @@
 'use client'
 import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "@/stores/themeStore";
+import {RootState} from "@/stores/store";
 import moon from "@/public/icons/moon.svg"
 import sun from "@/public/icons/sun.svg"
 import {useEffect, useState} from "react";

@@ -5,6 +5,8 @@ import {
   FallbackStyles, StyleInjector,
   StyleProvider
 } from "@/components/theme/StyleInjector";
+import {FlashProvider} from "@/components/global/FlashCard";
+import {StoreProvider} from "@/stores/StoreProvider";
 
 
 const inter = Inter({subsets: ['latin']})
@@ -23,9 +25,9 @@ export default function RootLayout({
     </head>
     <body>
     <StyleInjector/>
-    <StyleProvider>
+    <StoreProvider>
       {children}
-    </StyleProvider>
+    </StoreProvider>
     </body>
     </html>
   )

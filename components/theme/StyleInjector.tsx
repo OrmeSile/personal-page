@@ -1,6 +1,6 @@
 'use client'
 import {COLORS} from "@/utils/theme";
-import {themeStore} from "@/stores/themeStore";
+import {store} from "@/stores/store";
 import {Provider} from "react-redux";
 
 //forced to match minifier output to avoid a React SRR hydration error.
@@ -35,7 +35,7 @@ export const StyleInjector = () => {
 export const StyleProvider = ({children}: {children: React.ReactNode}) => {
   return (
   <>
-    <Provider store={themeStore}>
+    <Provider store={store}>
       {children}
     </Provider>
   </>
