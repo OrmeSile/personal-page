@@ -8,17 +8,13 @@ import {Section} from "@/components/Article/Section";
 import movieList from '@/public/images/movie-list.png'
 import {Brand} from "@/components/Brand/Brand";
 import {GridContainer} from "@/components/Article/GridContainer";
-import dynamic from "next/dynamic";
-import {useFlashCard} from "@/hooks/useFlashCard";
+import {FlashContainer} from "@/components/Flash/FlashContainer";
 
 
 export default function Home() {
-  const FlashCard = dynamic(() =>
-    import('../components/global/FlashCard')
-  )
   return (
     <>
-      <FlashCard/>
+      <FlashContainer/>
       <Header/>
       <main className={homepageStyles.main}>
         <Image

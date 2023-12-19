@@ -3,31 +3,35 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export interface FlashState {
-  value: string | undefined
-  type: FlashType,
+  id: number
+  message: string
+  type: FlashType
   visible: boolean
 }
 
-const initialState: FlashState = {
-  value: undefined,
-  type: "info",
-  visible: false
-}
+const initialState: FlashState[] = []
 
 const flashSlice = createSlice({
   name: 'flash',
   initialState,
   reducers: {
-    show: (
+    add: (
       state,
-      action: PayloadAction<{ message: string | undefined, type: FlashType, visible: boolean}>
+      action: PayloadAction<{ message: string, type?: FlashType }>
     ) => {
-      state.value = action.payload.message
-      state.type = action.payload.type
-      state.visible = action.payload.visible
+      state.push({
+        id: state.length,
+        message: action.payload.message,
+        type: action.payload.type ? action.payload.type : 'success',
+        visible: true
+      })
+    },
+    remove: (
+      _state
+    ) => {
     }
   }
 })
 
-export const {show} = flashSlice.actions
+export const {add} = flashSlice.actions
 export const flashReducer = flashSlice.reducer

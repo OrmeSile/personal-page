@@ -3,13 +3,11 @@ import './globals.css'
 import {Metadata} from "next";
 import {
   FallbackStyles, StyleInjector,
-  StyleProvider
 } from "@/components/theme/StyleInjector";
-import {FlashProvider} from "@/components/global/FlashCard";
 import {StoreProvider} from "@/stores/StoreProvider";
 
 
-const inter = Inter({subsets: ['latin']})
+// const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {}
 export default function RootLayout({
@@ -20,7 +18,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-    <head>
+    <head title={"Vivien L'Helguen"}>
       <FallbackStyles/>
     </head>
     <body>

@@ -4,14 +4,20 @@ import {useIsLargeMediaQuery} from "@/hooks/useIsLargeMediaQuery";
 import React, {useEffect, useState} from "react";
 import {ColorModeToggle} from "@/components/global/ColorModeToggle";
 import {NavItem} from "@/components/global/NavItem";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "@/stores/store";
+import {add} from "@/stores/flashSlice";
 
 
 export const Header = () => {
   const [isChecked, setIsChecked] = useState(false)
   const isLarge = useIsLargeMediaQuery()
+  const flashState = useSelector((state: RootState) => state.flash)
+  const dispatch = useDispatch()
   useEffect(() => {
     if (!isLarge) setIsChecked(false)
-  }, [isLarge])
+    dispatch(add({message:'hello'}))
+  }, [isLarge, dispatch])
 
   const largeStyles = isLarge ? {
     menu: {
@@ -78,6 +84,11 @@ export const Header = () => {
   return (
     <>
       <header className={headerStyles.container}>
+        <button onClick={() => {
+          dispatch(add({message: `test-${flashState.length}`}))
+          setTimeout
+        }
+        }>add test</button>
         <label htmlFor={'input'}
                style={{...largeStyles.menu, ...checkedStyles.menu}}
                className={headerStyles.menu}
