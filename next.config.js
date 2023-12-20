@@ -1,4 +1,4 @@
-const {PHASE_EXPORT} = require("next/constants");
+const {PHASE_EXPORT, PHASE_DEVELOPMENT_SERVER} = require("next/constants");
 
 module.exports = (phase, {defaultConfig}) => {
   const webpackConfig = (config) => {
@@ -10,9 +10,9 @@ module.exports = (phase, {defaultConfig}) => {
   }
 
   // See https://github.com/gregrickaby/nextjs-github-pages.
-  // Added after failed deploy to pages
+  // Added after failing a deployment to pages
   return {...defaultConfig,
-    output: phase === PHASE_EXPORT ? 'export' : undefined,
+    output: phase !== PHASE_DEVELOPMENT_SERVER ? 'export' : undefined,
     basePath: phase === PHASE_EXPORT ? '/personal-page' : undefined,
     images: phase === PHASE_EXPORT ? {unoptimized: true}: undefined,
     webpack: webpackConfig
