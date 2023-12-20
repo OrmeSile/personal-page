@@ -1,8 +1,19 @@
 const {PHASE_EXPORT} = require("next/constants");
 /** @type {import('next').NextConfig} */
 const nextConfig = (phase, {defaultConfig}) => {
-    if(phase === PHASE_EXPORT) return {output: 'export',}
-    return {}
+  const config =  {
+    output: phase === PHASE_EXPORT ? 'export' : 'standalone',
+  }
+  return {...defaultConfig,...config}
 }
 
-module.exports = nextConfig
+const webpackConfig = (config) => {
+  config.module.rules.push({
+      test: /\.svg$/i,
+      use: ['@svgr/webpack'],
+    },
+  )
+  return config
+}
+
+module.exports = {...nextConfig, webpack: webpackConfig}

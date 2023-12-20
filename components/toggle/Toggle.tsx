@@ -1,6 +1,5 @@
-import Image from "next/image";
 import colorToggleStyles from "@/styles/colorToggle.module.css";
-import gear from "@/public/icons/gear.svg"
+import {ReactElement} from "react";
 
 export const Toggle = (
   {
@@ -34,8 +33,8 @@ export const Toggle = (
 export const IconSurroundedToggle = (
   {
     disabled = false,
-    beforeIconSource = null,
-    afterIconSource = null,
+    beforeIcon = null,
+    afterIcon = null,
     isChecked = true,
     handleClick,
     direction = 'horizontal',
@@ -43,8 +42,8 @@ export const IconSurroundedToggle = (
   }
     : {
     disabled?: boolean,
-    beforeIconSource?: string | null,
-    afterIconSource?: string | null,
+    beforeIcon?: ReactElement | null,
+    afterIcon?: ReactElement | null,
     isChecked?: boolean,
     handleClick?: () => void,
     direction?: 'horizontal' | 'vertical',
@@ -54,22 +53,14 @@ export const IconSurroundedToggle = (
     <div
       className={`${colorToggleStyles.container} ${direction === 'horizontal' ? colorToggleStyles.horizontal : colorToggleStyles.vertical}`}
     >
-      <Image
-        src={beforeIconSource ? beforeIconSource : gear}
-        alt={""}
-        className={`${!beforeIconSource && colorToggleStyles.loading} ${colorToggleStyles.icon}`}
-      />
+      {beforeIcon}
       <Toggle
         isChecked={isChecked}
         handleClick={handleClick}
         disabled={disabled}
         onChange={onChange}
       />
-      <Image
-        src={afterIconSource ? afterIconSource : gear}
-        alt={""}
-        className={`${!afterIconSource && colorToggleStyles.loading} ${colorToggleStyles.icon}`}
-      />
+      {afterIcon}
     </div>
   )
 }

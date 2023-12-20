@@ -7,6 +7,7 @@ import {remove} from "@/stores/flashSlice";
 import ErrorSVG from "@/public/icons/circle-xmark.svg"
 import SuccessSVG from "@/public/icons/circle-check.svg"
 import InfoSVG from "@/public/icons/circle-information.svg"
+import XMark from "@/public/icons/xmark.svg"
 
 const FlashCard = ({message, type, id}: {
   message: string,
@@ -19,26 +20,44 @@ const FlashCard = ({message, type, id}: {
   //remove flash after 3 seconds
   useEffect(() => {
     setTimeout(() => {
-      setIsVisible(false)
-      dispatch(remove({id}))
+      closeAndRemoveFlash(id)
     }, 300000)
   }, [])
 
+  const closeAndRemoveFlash = (id: number)=> {
+    setIsVisible(false)
+    dispatch(remove({id}))
+  }
+
+
+
   const svg = () => {
-    switch (type){
-      case "error": return ErrorSVG
-      case "success": return SuccessSVG
-      default: return InfoSVG
+    switch (type) {
+      case "error":
+        return <ErrorSVG
+          className={`${flashStyles.icon} ${flashStyles[`icon-${type}`]}`}/>
+      case "success":
+        return <SuccessSVG
+          className={`${flashStyles.icon} ${flashStyles[`icon-${type}`]}`}/>
+      default:
+        return <InfoSVG
+          className={`${flashStyles.icon} ${flashStyles[`icon-${type}`]}`}/>
     }
   }
-  console.log(svg())
 
   return (isVisible && (
       <div className={`${flashStyles.flash} ${flashStyles[type]}`}>
-        <ErrorSVG width={100} height={100} stroke={'red'}/>
+        <div className={flashStyles.iconContainer}>
+          {svg()}
+        </div>
         <p>
           {message}
         </p>
+        <div>
+          <button className={flashStyles.close} onClick={() => closeAndRemoveFlash(id)}>
+            <XMark/>
+          </button>
+        </div>
       </div>
     )
   )

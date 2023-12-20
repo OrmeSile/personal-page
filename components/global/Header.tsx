@@ -110,7 +110,7 @@ export const Header = () => {
               dispatch(add({
                 message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta est, facilis id illum ipsum nihil placeat quasi quibusdam similique. Alias aliquam at dolor esse, expedita facere magni similique sunt?',
                 id: Date.now(),
-                type: "info"
+                type: "error"
               }))
             }
             }>add test

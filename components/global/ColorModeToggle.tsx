@@ -1,13 +1,15 @@
 'use client'
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@/stores/store";
-import moon from "@/public/icons/moon.svg"
-import sun from "@/public/icons/sun.svg"
+import Moon from "@/public/icons/moon.svg"
+import Sun from "@/public/icons/sun.svg"
 import {useEffect, useState} from "react";
 import {setColorsByTheme} from "@/components/theme/StyleInjector";
 import {init, switchTheme} from "@/stores/themeSlice";
 import {COLORS} from "@/utils/theme";
-import {IconSurroundedToggle, Toggle} from "@/components/toggle/Toggle";
+import {IconSurroundedToggle} from "@/components/toggle/Toggle";
+import colorToggleStyles from "@/styles/colorToggle.module.css";
+
 
 export const ColorModeToggle = () => {
 
@@ -42,8 +44,8 @@ export const ColorModeToggle = () => {
     <>
       {isClient ?
         (<IconSurroundedToggle
-            beforeIconSource={moon}
-            afterIconSource={sun}
+            beforeIcon={<Moon className={colorToggleStyles.icon}/>}
+            afterIcon={<Sun className={colorToggleStyles.icon}/>}
             isChecked={isChecked}
             handleClick={handleClick}
             onChange={handleChange}

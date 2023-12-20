@@ -39,28 +39,12 @@ export const COLORS = {
     light: 'rgb(50,50,50)',
     dark: 'rgb(50,50,50)',
   },
-  'icon-invert': {
-    light: 'none',
-    dark: 'invert(100%)',
-  },
-  'icon-success': {
-    light: 'hue-rotate()',
-    dark: 'hue-rotate()'
-  },
-  'icon-info': {
-    light: 'hue-rotate()',
-    dark: 'hue-rotate(90deg) invert(50%) saturate(200%)'
-  },
-  'icon-error': {
-    light: 'hue-rotate()',
-    dark: 'hue-rotate()'
-  },
   'img-brightness': {
     light: 'none',
     dark: 'hue-rotate(-50deg)'
   },
   'success-primary': {
-    light: 'rgb(178,255,130)',
+    light: 'rgb(129,216,76)',
     dark: 'rgb(108,192,112)'
   },
   'info-primary': {

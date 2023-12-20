@@ -46,10 +46,8 @@
     transform: translateX(1.2em);
 }
 
-.icon {
-    width: 2em;
-    filter: var(--icon-invert);
-    transition: .2s;
+.icon>path{
+    stroke: var(--text-primary);
 }
 
 .container {
