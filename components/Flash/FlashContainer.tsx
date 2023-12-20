@@ -19,16 +19,17 @@ const FlashCard = ({message, type, id}: {
 
   //remove flash after 3 seconds
   useEffect(() => {
-    setTimeout(() => {
-      closeAndRemoveFlash(id)
-    }, 300000)
+    if (type !== 'error') {
+      setTimeout(() => {
+        closeAndRemoveFlash(id)
+      }, 5000)
+    }
   }, [])
 
-  const closeAndRemoveFlash = (id: number)=> {
+  const closeAndRemoveFlash = (id: number) => {
     setIsVisible(false)
     dispatch(remove({id}))
   }
-
 
 
   const svg = () => {
@@ -54,7 +55,8 @@ const FlashCard = ({message, type, id}: {
           {message}
         </p>
         <div>
-          <button className={flashStyles.close} onClick={() => closeAndRemoveFlash(id)}>
+          <button className={flashStyles.close}
+                  onClick={() => closeAndRemoveFlash(id)}>
             <XMark/>
           </button>
         </div>
