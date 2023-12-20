@@ -9,7 +9,7 @@ module.exports = (phase, {defaultConfig}) => {
     return config
   }
 
-  return {
+  return {...defaultConfig,
     output: 'export',
     // webpack: webpackConfig
   }
