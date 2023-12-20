@@ -1,8 +1,11 @@
 const {PHASE_EXPORT} = require("next/constants");
 
-module.exports = (phase, {defaultConfig}) => {
+module.exports = (phase) => {
+  const outputConfig = phase === PHASE_EXPORT ? {
+    output: 'export'
+  } : {}
   return {
-    output: phase === PHASE_EXPORT ? 'export' : undefined,
+    ...outputConfig,
     webpack: (config) => {
       config.module.rules.push({
           test: /\.svg$/i,
