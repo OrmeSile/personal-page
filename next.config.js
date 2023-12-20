@@ -9,11 +9,8 @@ module.exports = (phase, {defaultConfig}) => {
     return config
   }
 
-  if (phase === PHASE_EXPORT) {
-    return {
-      output: 'export',
-      webpack: webpackConfig
-    }
+  return {
+    output: 'export',
+    webpack: webpackConfig
   }
-  return {webpack: webpackConfig}
 }
