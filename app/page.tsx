@@ -38,37 +38,24 @@ export default function Home() {
                 alt={''}
                 title={'Movie List'}
                 link={'https://github.com/OrmeSile/movie-list'}
-              >
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-                  beatae cumque deleniti distinctio dolor eligendi eveniet fuga
-                  impedit iste iusto labore laborum magni modi officia quos
-                  saepe,
-                  sapiente ullam voluptas?</p>
-              </ProjectCard>
+                description={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpadicta dignissimos dolores illum nemo nostrum quae repellat! Amet,magni, quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.`}
+              />
+              <
+                ProjectCard
+                src={movieList}
+                alt={''}
+                title={'Movie List'}
+                link={'https://github.com/OrmeSile/movie-list'}
+                description={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpadicta dignissimos dolores illum nemo nostrum quae repellat! Amet,magni, quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.`}
+
+              />
               <ProjectCard
                 src={movieList}
                 alt={''}
                 title={'Movie List'}
                 link={'https://github.com/OrmeSile/movie-list'}
-              >
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-                  beatae cumque deleniti distinctio dolor eligendi eveniet fuga
-                  impedit iste iusto labore laborum magni modi officia quos
-                  saepe,
-                  sapiente ullam voluptas?</p>
-              </ProjectCard>
-              <ProjectCard
-                src={movieList}
-                alt={''}
-                title={'Movie List'}
-                link={'https://github.com/OrmeSile/movie-list'}
-              >
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-                  beatae cumque deleniti distinctio dolor eligendi eveniet fuga
-                  impedit iste iusto labore laborum magni modi officia quos
-                  saepe,
-                  sapiente ullam voluptas?</p>
-              </ProjectCard>
+                description={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpadicta dignissimos dolores illum nemo nostrum quae repellat! Amet,magni, quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.`}
+              />
             </GridContainer>
           </Section>
         </Article>
