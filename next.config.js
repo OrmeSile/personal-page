@@ -11,6 +11,6 @@ module.exports = (phase, {defaultConfig}) => {
 
   return {
     output: 'export',
-    webpack: webpackConfig
+    // webpack: webpackConfig
   }
 }
