@@ -17,21 +17,25 @@ const flashSlice = createSlice({
   reducers: {
     add: (
       state,
-      action: PayloadAction<{ message: string, type?: FlashType }>
+      action: PayloadAction<{ message: string, type?: FlashType, id: number }>
     ) => {
       state.push({
-        id: state.length,
+        id: action.payload.id,
         message: action.payload.message,
         type: action.payload.type ? action.payload.type : 'success',
         visible: true
       })
     },
     remove: (
-      _state
+      state,
+      action: PayloadAction<{id: number}>
     ) => {
+      return state.filter((flash) => {
+        return flash.id !== action.payload.id
+      })
     }
   }
 })
 
-export const {add} = flashSlice.actions
+export const {add, remove} = flashSlice.actions
 export const flashReducer = flashSlice.reducer

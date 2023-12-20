@@ -12,12 +12,11 @@ import {add} from "@/stores/flashSlice";
 export const Header = () => {
   const [isChecked, setIsChecked] = useState(false)
   const isLarge = useIsLargeMediaQuery()
-  const flashState = useSelector((state: RootState) => state.flash)
   const dispatch = useDispatch()
+
   useEffect(() => {
     if (!isLarge) setIsChecked(false)
-    dispatch(add({message:'hello'}))
-  }, [isLarge, dispatch])
+  }, [isLarge])
 
   const largeStyles = isLarge ? {
     menu: {
@@ -84,11 +83,6 @@ export const Header = () => {
   return (
     <>
       <header className={headerStyles.container}>
-        <button onClick={() => {
-          dispatch(add({message: `test-${flashState.length}`}))
-          setTimeout
-        }
-        }>add test</button>
         <label htmlFor={'input'}
                style={{...largeStyles.menu, ...checkedStyles.menu}}
                className={headerStyles.menu}
@@ -112,6 +106,15 @@ export const Header = () => {
             <NavItem>
               <ColorModeToggle/>
             </NavItem>
+            <button onClick={() => {
+              dispatch(add({
+                message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta est, facilis id illum ipsum nihil placeat quasi quibusdam similique. Alias aliquam at dolor esse, expedita facere magni similique sunt?',
+                id: Date.now(),
+                type: "info"
+              }))
+            }
+            }>add test
+            </button>
           </ul>
         </div>
       </header>
