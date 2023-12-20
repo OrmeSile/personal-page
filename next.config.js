@@ -9,8 +9,12 @@ module.exports = (phase, {defaultConfig}) => {
     return config
   }
 
+  // See https://github.com/gregrickaby/nextjs-github-pages.
+  // Added after failed deploy to pages
   return {...defaultConfig,
-    output: 'export',
-    // webpack: webpackConfig
+    output: phase === PHASE_EXPORT ? 'export' : undefined,
+    basePath: phase === PHASE_EXPORT ? '/personal-page' : undefined,
+    images: phase === PHASE_EXPORT ? {unoptimized: true}: undefined,
+    webpack: webpackConfig
   }
 }
