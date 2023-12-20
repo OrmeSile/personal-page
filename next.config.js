@@ -17,7 +17,7 @@ module.exports = (phase, {defaultConfig}) => {
     output: phase !== PHASE_DEVELOPMENT_SERVER ? 'export' : undefined,
     assetPrefix: phase !== PHASE_DEVELOPMENT_SERVER ? process.env.PROD_BASE_URL : undefined,
     basePath: phase !== PHASE_DEVELOPMENT_SERVER ? '/personal-page' : undefined,
-    images: phase === PHASE_EXPORT ? {unoptimized: true}: undefined,
+    images: phase !== PHASE_DEVELOPMENT_SERVER ? {unoptimized: true}: undefined,
     webpack: webpackConfig
   }
 }
