@@ -1,14 +1,27 @@
 .article {
+    position: relative;
     background: var(--bg-primary);
     display: flex;
-    padding: 2rem;
-    margin: 1rem 5vw;
+    padding: 0;
+    margin: 1rem 1rem 5rem 1rem;
     border-radius: 1rem 1rem 0.5rem 0.5rem;
     flex-flow: column nowrap;
-    gap :1rem;
+    width: auto;
+    gap: 3rem;
     @media screen and (min-width: 768px) {
-        margin: 0 2em;
+        margin: 2rem 2rem 7rem 2em;
     }
+}
+
+.section {
+    position: relative;
+    top: -2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 0 1rem;
+    width: auto;
+    background: var(--bg-accent);
+    overflow: hidden;
 }
 
 .cardImageContainer {
@@ -16,15 +29,57 @@
     aspect-ratio: 3/2;
 }
 
-.cardImage {
-}
-
-.section {
-    width: 100%;
-}
-
 .title {
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    font-size: 9rem;
+    line-height: 8rem;
+    display: flex;
+    width: 100%;
+    color: var(--heading-color);
+    position: relative;
+    z-index: 1;
+}
+.title::before {
+    z-index: -1;
+    top: 3rem;
+    content: '';
+    position: absolute;
+    width: 80%;
+    background: linear-gradient(to right, transparent 5%, var(--baseline-color) 10%, var(--accent-color) 80%);
+    height: 3rem;
+    border-radius: 1rem;
 
+}
+.descriptionContainer{
+    padding:  2rem 0;
+}
+
+.cardTitle {
+    font-weight: bolder;
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: var(--heading-color)
+}
+
+.techContainer {
+    width: auto;
+    border: solid var(--btn-secondary) 1px;
+    border-radius: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.icon {
+    height: 5rem;
+    max-height: 100%;
 }
 
 .card {
@@ -48,7 +103,11 @@
     gap: 1em;
     display: grid;
     grid-template-columns: 1fr;
-   @media screen and (min-width: 768px) {
+    @media screen and (min-width: 768px) {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+.link{
+    color: var(--anchor);
 }

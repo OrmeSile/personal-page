@@ -1,5 +1,5 @@
 import articleStyles from './article.module.css'
-export const GridContainer = ({rows, children}: { rows: number, children: React.ReactNode }) => {
+export const GridContainer = ({children}: {children: React.ReactNode }) => {
   return <div className={articleStyles.cardContainer}>
     {children}
   </div>

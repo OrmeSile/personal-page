@@ -3,15 +3,20 @@ export const Section = (
   {
     id,
     title,
+    description,
     children,
   }: {
     id: string,
     title: string,
+    description?: string,
     children?: React.ReactNode,
   }) => {
   return (
     <section id={id} className={articleStyles.section}>
-      <h2 className={articleStyles.title}>{title}</h2>
+      <div className={articleStyles.descriptionContainer}>
+      <h2 className={`${articleStyles.title}`}>{title}</h2>
+        {description && <p>{description}</p>}
+      </div>
       {children}
     </section>
   )

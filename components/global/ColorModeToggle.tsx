@@ -20,12 +20,8 @@ export const ColorModeToggle = () => {
 
   useEffect(() => {
     const initialTheme = window.localStorage.getItem('color-mode')!
-    console.log(initialTheme)
     dispatch(init(initialTheme))
-    console.log(isChecked)
-
     setIsChecked(initialTheme === 'light')
-    console.log(isChecked)
     setIsClient(true)
   }, []);
 

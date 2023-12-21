@@ -25,15 +25,15 @@ export default function Home() {
           loading={"eager"}
           sizes={"(max-width: 768px) 100vw, 80vw"}
         />
-        <Brand name={"Vivien L'Helguen"} subtext={'Webdev'}/>
+        <Brand name={"Vivien L'Hel\u00ADguen"} subtext={'Webdev'}/>
         <Article>
-          <Section id={'projects'} title={'Projects'}>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
-              dicta dignissimos dolores illum nemo nostrum quae repellat! Amet,
-              magni, quae. Cumque, earum error et eveniet illo ipsam iste
-              voluptatibus.</p>
-            <GridContainer rows={2}>
+          <Section id={'projets'} title={'Projets'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa\n' +
+            '              dicta dignissimos dolores illum nemo nostrum quae repellat! Amet,\n' +
+            '              magni, quae. Cumque, earum error et eveniet illo ipsam iste\n' +
+            '              voluptatibus.'}>
+            <GridContainer>
               <ProjectCard
+                technologies={['postgresql', 'php', 'symfony',"docker" ]}
                 src={movieList}
                 alt={''}
                 title={'Movie List'}

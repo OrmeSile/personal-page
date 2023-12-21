@@ -1,10 +1,7 @@
 html {
     font: 62.5% sans-serif;
-    width: 100%;
     margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
+    padding: 0;}
 
 body {
     font: 1.6em/1.4 Arial, sans-serif;
@@ -17,5 +14,4 @@ body {
 
 a {
     color: rgb(49, 137, 199)
-
 }
