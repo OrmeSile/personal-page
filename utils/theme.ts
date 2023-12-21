@@ -12,7 +12,7 @@ export const COLORS = {
     dark: 'rgb(50,50,50)'
   },
   'bg-secondary': {
-    light: 'rgb(235,235,235)',
+    light: 'rgb(230,230,230)',
     dark: 'rgb(45,45,45)'
   },
   'bg-tertiary': {

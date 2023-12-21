@@ -6,6 +6,8 @@ import {ProjectCard} from "@/components/Article/ProjectCard";
 import {Article} from "@/components/Article/Article";
 import {Section} from "@/components/Article/Section";
 import movieList from '@/public/images/movie-list.png'
+import memoLists from "@/public/images/memo-lists.png"
+import counterSpell from "@/public/images/counterspell.png"
 import {Brand} from "@/components/Brand/Brand";
 import {GridContainer} from "@/components/Article/GridContainer";
 import {FlashContainer} from "@/components/Flash/FlashContainer";
@@ -32,24 +34,44 @@ export default function Home() {
             '              magni, quae. Cumque, earum error et eveniet illo ipsam iste\n' +
             '              voluptatibus.'}>
             <GridContainer>
-              <ProjectCard
-                technologies={['postgresql', 'php', 'symfony',"docker" ]}
-                src={movieList}
-                alt={''}
-                title={'Movie List'}
-                link={'https://github.com/OrmeSile/movie-list'}
-                description={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpadicta dignissimos dolores illum nemo nostrum quae repellat! Amet,magni, quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.`}
-              />
               <
                 ProjectCard
-                src={movieList}
+                technologies={[
+                  "next",
+                  "reactjs",
+                  "typescript",
+                  'prisma',
+                  "postgresql",
+                  "docker"
+                ]}
+                src={memoLists}
                 alt={''}
-                title={'Movie List'}
-                link={'https://github.com/OrmeSile/movie-list'}
-                description={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpadicta dignissimos dolores illum nemo nostrum quae repellat! Amet,magni, quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.`}
+                title={'Memos'}
+                link={'https://github.com/OrmeSile/memolists'}
+                description={` quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.`}
 
               />
               <ProjectCard
+                title={'Counterspell'}
+                src={counterSpell}
+                technologies={[
+                  'vue',
+                  "typescript",
+                  'vite',
+                  'codeigniter',
+                  "mariadb",
+                  "gitlab",
+                  "apache"
+                ]}
+                description={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpadicta dignissimos dolores illum nemo nostrum quae repellat! Amet,magni, quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.`}
+              />
+              <ProjectCard
+                technologies={[
+                  'symfony',
+                  'php',
+                  'postgresql',
+                  "docker"
+                ]}
                 src={movieList}
                 alt={''}
                 title={'Movie List'}

@@ -25,6 +25,7 @@ import TypescriptIcon from '@/public/icons/technologies/typescript.svg'
 import ViteIcon from '@/public/icons/technologies/vite.svg'
 import VueIcon from '@/public/icons/technologies/vue.svg'
 import WebpackIcon from '@/public/icons/technologies/webpack.svg'
+import ApacheIcon from "@/public/icons/technologies/apache.svg"
 import DefaultIcon from "@/public/icons/technologies/default_file.svg"
 import React, {ReactElement} from "react";
 
@@ -37,34 +38,37 @@ export const ProjectCard = (
     description,
     technologies
   }: {
-    src: StaticImageData,
-    alt: string,
+    src?: StaticImageData,
+    alt?: string,
     title: string,
-    link: string,
+    link?: string,
     description: string,
     technologies?: Technologies[]
   }) => {
   return (
     <div className={articleStyles.card}>
-      <div
-        className={articleStyles.cardImageContainer}
+      <div className={articleStyles.cardImageContainer}
       >
-        <Image
-          sizes="(max-width: 768px) 640px, 300px "
-          src={src}
-          alt={alt}
-          fill={true}
-          style={{objectFit: "cover"}}
-          className={articleStyles.cardImage}
-        />
+        {src &&
+          <Image
+            sizes="(max-width: 768px) 100vw, 25vw"
+            src={src}
+            alt={alt!}
+            fill={true}
+            style={{objectFit: "cover"}}
+            className={articleStyles.cardImage}
+          />}
       </div>
       <div className={articleStyles.cardContent}>
         <h3 className={`${articleStyles.cardTitle}`}>{title}</h3>
         {technologies && <TechnologiesContainer technologies={technologies}/>}
         <p>{description}</p>
-        <Link href={link} className={articleStyles.link}>
+      </div>
+      <div className={articleStyles.linkContainer}>
+        {link && <Link href={link} className={articleStyles.link}>
           Lien
         </Link>
+        }
       </div>
     </div>
   )
@@ -134,12 +138,15 @@ const getIconFromName = (name: Technologies): ReactElement => {
         return <VueIcon/>
       case "webpack":
         return <WebpackIcon/>
+      case "apache":
+        return <ApacheIcon/>
       default:
         return <DefaultIcon/>
     }
   }
   return React.cloneElement(selector(), {
     className: articleStyles.icon,
-    key: name
+    key: name,
+    alt: name
   })
 }

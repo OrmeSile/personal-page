@@ -24,3 +24,4 @@ type Technologies =
   | 'vite'
   | 'vue'
   | 'webpack'
+  | 'apache'
