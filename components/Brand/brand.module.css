@@ -21,7 +21,7 @@
     position: relative;
     color: var(--title-color);
     font-size: 12rem;
-    margin:  3rem 0 0 0;
+    margin:  5rem 0 0 0;
     line-height: 12rem;
     @media screen and (min-width: 768px) {
         text-align: left;

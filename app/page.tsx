@@ -11,12 +11,13 @@ import counterSpell from "@/public/images/counterspell.png"
 import {Brand} from "@/components/Brand/Brand";
 import {GridContainer} from "@/components/Article/GridContainer";
 import {FlashContainer} from "@/components/Flash/FlashContainer";
-import brandStyles from "@/components/Brand/brand.module.css"
+import {OverflowBlock} from "@/components/global/OverflowBlock";
 
 
 export default function Home() {
   return (
     <>
+      <OverflowBlock/>
       <FlashContainer/>
       <Header/>
       <main className={homepageStyles.main}>

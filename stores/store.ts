@@ -1,11 +1,13 @@
 import {configureStore} from "@reduxjs/toolkit";
 import {themeReducer} from "@/stores/themeSlice";
 import {flashReducer} from "@/stores/flashSlice";
+import {overflowReducer} from "@/stores/overflowSlice";
 
 export const store = configureStore({
   reducer: {
     theme: themeReducer,
-    flash: flashReducer
+    flash: flashReducer,
+    overflow: overflowReducer
   }
 })
 

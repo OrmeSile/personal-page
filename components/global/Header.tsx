@@ -4,108 +4,78 @@ import {useIsLargeMediaQuery} from "@/hooks/useIsLargeMediaQuery";
 import React, {useEffect, useState} from "react";
 import {ColorModeToggle} from "@/components/global/ColorModeToggle";
 import {NavItem} from "@/components/global/NavItem";
+import {useDispatch} from "react-redux";
+import {set, toggle} from "@/stores/overflowSlice";
 
 
 export const Header = () => {
   const [isChecked, setIsChecked] = useState(false)
   const isLarge = useIsLargeMediaQuery()
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    if (!isLarge) setIsChecked(false)
+    setIsChecked(false)
+    dispatch(set(false))
   }, [isLarge])
 
-  const largeStyles = isLarge ? {
-    menu: {
-      transition: 'none'
-    } as React.CSSProperties,
-    child: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'initial',
-      transition: 'none',
-      height: '5em',
-      boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.3)',
-      borderRadius: '.5em',
-      width: 'auto',
-      padding: '0 2em',
-      margin: 'auto',
-    } as React.CSSProperties
-  } : {
-    menu: {
-      'zIndex': 100,
-      '--menu-toggle-side': '3rem',
-      cursor: 'pointer',
-      position: 'absolute',
-      right: '1rem',
-      top: '1rem',
-      width: 'var(--menu-toggle-side)',
-      height: 'var(--menu-toggle-side)',
-      flexFlow: 'column nowrap',
-      justifyContent: 'space-evenly',
-      alignItems: 'center',
-      transition: '.2s',
-    } as React.CSSProperties,
-    child: {
-      position: 'absolute',
-      height: '100vh',
-      transition: '.2s ease-out',
-      overflow: 'hidden',
-      width: '0',
-      alignItems: 'flex-start',
-      background: 'var(--bg-secondary)',
-    } as React.CSSProperties
-  }
-  const checkedStyles = isChecked && !isLarge ? {
+
+  const checkedStyles = isChecked ? {
     menu: {
       border: 'var(--btn-primary) 2px solid',
       borderRadius: '50%'
     } as React.CSSProperties,
     child: {
       margin: 0,
-      transform: 'translateX(-80vw)',
       background: 'var(--bg-secondary)',
-      width: '80vw',
+      width: '60vw',
+      transition: 'width .2s ease-out',
       visibility: 'visible',
       position: 'fixed',
+    } as React.CSSProperties,
+    container: {
+      position: "fixed",
+      width: '100%',
+      height: '100vh',
+      background: 'rgba(0,0,0,0.5)',
     } as React.CSSProperties
   } : {
     menu: {},
-    child: {}
+    child: {},
+    container: {}
   }
 
   const handleChange = () => {
     setIsChecked(!isChecked)
+    dispatch(toggle())
   }
 
   return (
-    <>
-      <header className={headerStyles.container}>
-        <label htmlFor={'input'}
-               style={{...largeStyles.menu, ...checkedStyles.menu}}
-               className={headerStyles.menu}
-        >
-          <input type={"checkbox"} id={'input'}
-                 checked={isChecked && !isLarge}
-                 onChange={handleChange}
-                 className={headerStyles.input}/>
-          <div className={headerStyles.menuOpen}/>
-          <div className={headerStyles.menuOpen}/>
-          <div className={headerStyles.menuOpen}/>
-        </label>
-        <div
-          style={{...largeStyles.child, ...checkedStyles.child}}
-          className={headerStyles.child}>
-          <ul className={`${headerStyles.list}  ${!isLarge}`}>
-            <NavItem link={'jkjkjk'} text={'Projets'}/>
-            <NavItem text={'Cursus'}/>
-            <NavItem text={'CV'}/>
-            <NavItem text={'Contact'}/>
-            <NavItem>
-              <ColorModeToggle/>
-            </NavItem>
-          </ul>
-        </div>
-      </header>
-    </>
+    <header className={headerStyles.container} style={checkedStyles.container}>
+      <label htmlFor={'input'}
+             style={{...checkedStyles.menu}}
+             className={headerStyles.menu}
+      >
+        <input type={"checkbox"} id={'input'}
+               checked={isChecked}
+               onClick={handleChange}
+               className={headerStyles.input}/>
+        <div className={headerStyles.menuOpen}/>
+        <div className={headerStyles.menuOpen}/>
+        <div className={headerStyles.menuOpen}/>
+      </label>
+      <div
+        style={{...checkedStyles.child}}
+        className={headerStyles.child}>
+        <ul className={`${headerStyles.list}`}>
+          <NavItem text={'Projets'}/>
+          <NavItem text={'Cursus'}/>
+          <NavItem text={'CV'}/>
+          <NavItem text={'Contact'}/>
+          <NavItem>
+            <ColorModeToggle/>
+          </NavItem>
+        </ul>
+      </div>
+    </header>
   )
 }
