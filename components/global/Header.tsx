@@ -43,6 +43,7 @@ export const Header = () => {
     child: {},
     container: {}
   }
+  const isLargeDisplay = isLarge ? {display: 'none'} : undefined
 
   const handleChange = () => {
     setIsChecked(!isChecked)
@@ -52,7 +53,7 @@ export const Header = () => {
   return (
     <header className={headerStyles.container} style={checkedStyles.container}>
       <label htmlFor={'input'}
-             style={{...checkedStyles.menu}}
+             style={{...checkedStyles.menu, ...isLargeDisplay}}
              className={headerStyles.menu}
       >
         <input type={"checkbox"} id={'input'}
