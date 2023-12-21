@@ -27,6 +27,14 @@ export const COLORS = {
     light: 'rgb(110, 110, 110)',
     dark: 'rgb(220, 220, 220)'
   },
+  'title-gradient': {
+    light: 'linear-gradient(to right, var(--baseline-color) 20%, var(--accent-color) 80%)',
+    dark: 'linear-gradient(to right, var(--baseline-color) 20%, var(--accent-color) 80%)'
+},
+  'line-gradient': {
+    light: 'linear-gradient(to right, transparent 5%, var(--baseline-color) 10%, var(--accent-color) 80%)',
+    dark: 'linear-gradient(to right, transparent 5%, var(--baseline-color) 10%, var(--accent-color) 80%)'
+  },
   'btn-secondary': {
     light: 'rgb(200, 200, 200)',
     dark: 'rgb(110, 110, 110)'

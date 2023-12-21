@@ -3,13 +3,14 @@
     flex-flow: column wrap;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 10rem;
     width: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 50%);
     @media screen and (min-width: 768px) {
         z-index: 1;
         font-size: 4rem;
         align-items: flex-start;
+        margin-bottom: 2rem;
     }
 }
 
@@ -21,8 +22,9 @@
     position: relative;
     color: var(--title-color);
     font-size: 12rem;
-    margin:  5rem 0 0 0;
+    margin:  7rem 0 0 0;
     line-height: 12rem;
+    white-space: pre-wrap;
     @media screen and (min-width: 768px) {
         text-align: left;
         margin-top: 15rem;

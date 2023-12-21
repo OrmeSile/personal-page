@@ -1,3 +1,4 @@
+'use client'
 import backgroundImage from "@/public/images/portfolio-background.webp";
 import Image from "next/image";
 import homepageStyles from "@/styles/homepage.module.css"
@@ -12,15 +13,20 @@ import {Brand} from "@/components/Brand/Brand";
 import {GridContainer} from "@/components/Article/GridContainer";
 import {FlashContainer} from "@/components/Flash/FlashContainer";
 import {OverflowBlock} from "@/components/global/OverflowBlock";
+import {MutableRefObject, RefObject, useEffect, useRef, useState} from "react";
+import {useIsScrolledAfter} from "@/hooks/useIsScrolledAfter";
 
 
 export default function Home() {
+  const brandRef = useRef<HTMLDivElement>(null)
+  const scrollContainerRef = useRef<HTMLElement>(null)
+  const isAfter = useIsScrolledAfter(brandRef, scrollContainerRef, 200)
   return (
     <>
       <OverflowBlock/>
       <FlashContainer/>
-      <Header/>
-      <main className={homepageStyles.main}>
+      <Header extend={isAfter}/>
+      <main ref={scrollContainerRef} className={homepageStyles.main} >
         <Image
           className={homepageStyles.background}
           src={backgroundImage}
@@ -29,12 +35,10 @@ export default function Home() {
           loading={"eager"}
           sizes={"(max-width: 768px) 100vw, 80vw"}
         />
-        <Brand name={`Vivien L'Hel\u00ADguen`} subtext={'Webdev'}/>
+        <Brand ref={brandRef} name={'Vivien\nL\'Hel\u00ADguen'} subtext={'Webdev'}/>
         <Article>
-          <Section id={'projets'} title={'Projets'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa\n' +
-            '              dicta dignissimos dolores illum nemo nostrum quae repellat! Amet,\n' +
-            '              magni, quae. Cumque, earum error et eveniet illo ipsam iste\n' +
-            '              voluptatibus.'}>
+          <Section id={'projets'} title={'Projets'}
+                   description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dicta dignissimos dolores illum nemo nostrum quae repellat! Amet,magni, quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.'}>
             <GridContainer>
               <
                 ProjectCard
@@ -55,6 +59,7 @@ export default function Home() {
               />
               <ProjectCard
                 title={'Counterspell'}
+                alt={''}
                 src={counterSpell}
                 technologies={[
                   'vue',
