@@ -18,7 +18,7 @@ export const Header = ({extend}: { extend: boolean }) => {
   useEffect(() => {
     setIsChecked(false)
     dispatch(set(false))
-  }, [isLarge])
+  }, [isLarge, dispatch])
 
   const checkedStyles = isChecked ? {
     menu: {
@@ -54,9 +54,11 @@ export const Header = ({extend}: { extend: boolean }) => {
   return (
     <header className={headerStyles.container} style={checkedStyles.container}>
       <div>
-        {extend && !isLarge &&(
+        {extend && !isLarge && (
           <div className={headerStyles.brandContainer}>
-            <h2 className={`${headerStyles.followBrand} ${josefinSans.className}`}>Vivien L&apos;Helguen</h2>
+            <h2
+              className={`${headerStyles.followBrand} ${josefinSans.className}`}>Vivien
+              L&apos;Helguen</h2>
           </div>)
         }
         <label htmlFor={'input'}
@@ -71,20 +73,20 @@ export const Header = ({extend}: { extend: boolean }) => {
           <div className={headerStyles.menuOpen}/>
           <div className={headerStyles.menuOpen}/>
         </label>
-    </div>
-  <div
-    style={{...checkedStyles.child}}
-    className={headerStyles.child}>
-    <ul className={`${headerStyles.list}`}>
-      <NavItem text={'Projets'}/>
-      <NavItem text={'Cursus'}/>
-      <NavItem text={'CV'}/>
-      <NavItem text={'Contact'}/>
-      <NavItem>
-        <ColorModeToggle/>
-      </NavItem>
-    </ul>
-  </div>
-</header>
-)
+      </div>
+      <div
+        style={{...checkedStyles.child}}
+        className={headerStyles.child}>
+        <ul className={`${headerStyles.list}`}>
+          <NavItem text={'Projets'}/>
+          <NavItem text={'Cursus'}/>
+          <NavItem text={'CV'}/>
+          <NavItem text={'Contact'}/>
+          <NavItem>
+            <ColorModeToggle/>
+          </NavItem>
+        </ul>
+      </div>
+    </header>
+  )
 }

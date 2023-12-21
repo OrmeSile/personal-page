@@ -13,7 +13,7 @@ import {Brand} from "@/components/Brand/Brand";
 import {GridContainer} from "@/components/Article/GridContainer";
 import {FlashContainer} from "@/components/Flash/FlashContainer";
 import {OverflowBlock} from "@/components/global/OverflowBlock";
-import {MutableRefObject, RefObject, useEffect, useRef, useState} from "react";
+import {useRef} from "react";
 import {useIsScrolledAfter} from "@/hooks/useIsScrolledAfter";
 
 

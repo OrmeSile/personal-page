@@ -1,6 +1,5 @@
 'use client'
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {DispatchProp} from "react-redux";
 
 export interface ThemeState {
   value: 'light' | 'dark' | string

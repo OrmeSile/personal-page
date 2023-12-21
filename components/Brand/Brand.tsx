@@ -9,9 +9,11 @@ export const Brand = forwardRef(
     ref: ForwardedRef<HTMLDivElement>
   ) {
 
-    return <div ref={ref}
-                className={`${brandStyles.container} ${josefinSans.className}`}>
-      <h1 className={brandStyles.title}>{name}</h1>
-      <h2 className={brandStyles.subtext}>{subtext}</h2>
-    </div>
+    return (
+      <div ref={ref}
+           className={`${brandStyles.container} ${josefinSans.className}`}>
+        <h1 className={brandStyles.title}>{name}</h1>
+        <h2 className={brandStyles.subtext}>{subtext}</h2>
+      </div>
+    )
   })

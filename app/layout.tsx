@@ -1,4 +1,3 @@
-import {Inter} from 'next/font/google'
 import './globals.css'
 import {Metadata} from "next";
 import {
@@ -18,8 +17,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-    <head title={"Vivien L'Helguen"}>
-      <FallbackStyles/>
+    <head>
+      <title>Vivien L&apos;Helguen</title>
+      <FallbackStyles/><title></title>
     </head>
     <body>
     <StyleInjector/>
