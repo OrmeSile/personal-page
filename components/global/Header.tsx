@@ -4,15 +4,11 @@ import {useIsLargeMediaQuery} from "@/hooks/useIsLargeMediaQuery";
 import React, {useEffect, useState} from "react";
 import {ColorModeToggle} from "@/components/global/ColorModeToggle";
 import {NavItem} from "@/components/global/NavItem";
-import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "@/stores/store";
-import {add} from "@/stores/flashSlice";
 
 
 export const Header = () => {
   const [isChecked, setIsChecked] = useState(false)
   const isLarge = useIsLargeMediaQuery()
-  const dispatch = useDispatch()
 
   useEffect(() => {
     if (!isLarge) setIsChecked(false)
@@ -106,15 +102,6 @@ export const Header = () => {
             <NavItem>
               <ColorModeToggle/>
             </NavItem>
-            <button onClick={() => {
-              dispatch(add({
-                message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta est, facilis id illum ipsum nihil placeat quasi quibusdam similique. Alias aliquam at dolor esse, expedita facere magni similique sunt?',
-                id: Date.now(),
-                type: "error"
-              }))
-            }
-            }>add test
-            </button>
           </ul>
         </div>
       </header>

@@ -22,7 +22,7 @@ const FlashCard = ({message, type, id}: {
     if (type !== 'error') {
       setTimeout(() => {
         closeAndRemoveFlash(id)
-      }, 5000)
+      }, 3000)
     }
   }, [])
 

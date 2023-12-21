@@ -1,38 +1,38 @@
 .container {
     display: flex;
-    flex-flow: column nowrap;
-    aspect-ratio: 5/2;
+    flex-flow: column wrap;
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 2rem;
+    width: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 50%);
     @media screen and (min-width: 768px) {
         z-index: 1;
         font-size: 4rem;
         align-items: flex-start;
-        padding: 3rem;
     }
 }
 
 .title {
+    hyphens: manual;
+    word-break: normal;
     text-align: center;
     width: 100%;
     position: relative;
     color: var(--title-color);
-    font-size: 4rem;
+    font-size: 12rem;
     margin: 0;
-    white-space: nowrap;
     @media screen and (min-width: 768px) {
-        padding: 0 0 0 2rem;
         text-align: left;
+        margin-top: 15rem;
     }
 }
 
 .subtext {
     color: var(--subtext-color);
+    font-size: 8rem;
     margin: 0;
     @media screen and (min-width: 768px) {
-        font-size: 2rem;
         padding: 0 2rem;
         margin-left: 2rem;
     }
