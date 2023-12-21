@@ -62,10 +62,11 @@ export const Header = () => {
     } as React.CSSProperties,
     child: {
       margin: 0,
-      transform: 'translateX(-50vw)',
+      transform: 'translateX(-80vw)',
       background: 'var(--bg-secondary)',
-      width: '50vw',
+      width: '80vw',
       visibility: 'visible',
+      position: 'fixed',
     } as React.CSSProperties
   } : {
     menu: {},

@@ -11,6 +11,7 @@ import counterSpell from "@/public/images/counterspell.png"
 import {Brand} from "@/components/Brand/Brand";
 import {GridContainer} from "@/components/Article/GridContainer";
 import {FlashContainer} from "@/components/Flash/FlashContainer";
+import brandStyles from "@/components/Brand/brand.module.css"
 
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
           loading={"eager"}
           sizes={"(max-width: 768px) 100vw, 80vw"}
         />
-        <Brand name={"Vivien L'Hel\u00ADguen"} subtext={'Webdev'}/>
+        <Brand name={`Vivien L'Hel\u00ADguen`} subtext={'Webdev'}/>
         <Article>
           <Section id={'projets'} title={'Projets'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa\n' +
             '              dicta dignissimos dolores illum nemo nostrum quae repellat! Amet,\n' +
