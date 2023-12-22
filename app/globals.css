@@ -27,3 +27,19 @@ a {
     scrollbar-gutter: stable;
 
 }
+
+.linkButton {
+    font-size: 2rem;
+    bottom: 0;
+    z-index: 10;
+    width: 60%;
+    margin:  0 auto 3rem auto;
+    height: 5rem;
+    border: 2px solid var(--btn-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    text-decoration: none;
+    text-underline: none;
+}

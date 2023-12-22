@@ -16,6 +16,7 @@ import {OverflowBlock} from "@/components/global/OverflowBlock";
 import {useRef} from "react";
 import {useIsScrolledAfter} from "@/hooks/useIsScrolledAfter";
 import {CursusBlock} from "@/components/Cursus/CursusBlock";
+import {PDFViewer} from "@/components/CV/PDFViewer";
 
 
 export default function Home() {
@@ -96,7 +97,7 @@ export default function Home() {
         </Article>
         <Article>
           <Section id={'cv'} title={'CV'}>
-
+            <PDFViewer/>
           </Section>
         </Article>
       </main>
