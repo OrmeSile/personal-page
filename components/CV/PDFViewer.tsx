@@ -18,7 +18,7 @@ export const PDFViewer = () => {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const resizeObserver = new ResizeObserver((entries, observer) => {
+    const resizeObserver = new ResizeObserver((entries, _observer) => {
       for (const entry of entries) {
         if (entry.contentBoxSize) setWidth(entry.contentBoxSize[0] ? entry.contentBoxSize[0].inlineSize : 0)
       }
@@ -29,7 +29,7 @@ export const PDFViewer = () => {
 
   return (
     <div ref={containerRef}>
-      <a href={fullPdf} className={`linkButton ${josefinSans.className}`} download={'cv'}>
+      <a href={fullPdf} className={`linkButton ${josefinSans.className}`} download={'Vivien-L-Helguen-CV'}>
         Télécharger
       </a>
       <Document
