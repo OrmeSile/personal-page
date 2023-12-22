@@ -1,42 +1,58 @@
-.div{
-}
-.div ul{
+.list{
     list-style: none;
     position: relative;
     overflow: hidden;
-    margin: 0;
-    padding: 5rem;
+    padding-left: 5rem;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
 }
 
-.div ul:before{
+.list:before{
     position: absolute;
     content: '';
     height: 100%;
     width: 1rem;
-    background: linear-gradient(to top, rgb(62, 108, 227) 20%, rgb(158, 230, 209) 80%);
+    background: linear-gradient(to top, transparent 5%, var(--baseline-color) 40%, var(--accent-color) 80%);
     left: 2.5rem;
     margin: 4rem 0;
 }
 
-.div ul li{
+.line{
     position: relative;
-    border: dashed green 1px;
 }
 
-.div ul li:after{
+.line:after{
     --point-diameter: 2rem;
     position: absolute;
     content: '';
-    background: var(--accent-color);
+    background: var(--point-color);
     width: var(--point-diameter);
     height: var(--point-diameter);
-    top: calc(50% - var(--point-diameter) /2);
-    left: -3.1rem;
+    top: var(--point-diameter);
+    left: -3rem;
     border-radius: 50%;
 }
 
-.div ul li div{
-    display: flex;
+.lineContainer{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+}
+
+.titleContainer {
+    z-index: 1;
+    position: relative;
+    hyphens: auto;
+    word-break: break-word;
+    padding: 0 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    align-items: flex-start;
 }

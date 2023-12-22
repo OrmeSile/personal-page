@@ -45,7 +45,11 @@ export const COLORS = {
   },
   'accent-color': {
     light: 'rgb(158,231,210)',
-    dark: 'rgb(157, 234, 149)'
+    dark: 'rgb(139,255,159)'
+  },
+  'point-color': {
+    light: 'rgb(158,230,209)',
+    dark: 'rgb(139,254,159)'
   },
   'baseline-color': {
     light: 'rgb(58,104,229)',

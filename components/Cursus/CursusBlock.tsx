@@ -1,38 +1,78 @@
 import cursusStyles from './cursus.module.css'
+import {
+  TechnologiesContainer
+} from "@/components/Article/TechnologiesContainer";
+import {Josefin_Sans} from "next/font/google";
+const josefinSans = Josefin_Sans({subsets: ['latin']})
+
 export const CursusBlock = () => {
   return (
-    <div className={cursusStyles.div}>
-      <ul>
-        <li>
-          <div>
-            <p>2023</p>
-            <h3>Ecole ENI</h3>
-          </div>
-        </li>
-        <li>
-          <div>
-            <p>2022</p>
-            <h3>Auto-formation</h3>
-          </div>
-          <div>
-            HELLO
-            WORLD
-            sdkjsdkljsdflksjd Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda blanditiis consequatur deleniti dolore dolores eveniet ipsam iusto laborum nisi nobis optio pariatur, praesentium saepe sapiente sequi. Aliquid, commodi cumque inventore laborum maiores molestias mollitia? Adipisci alias animi asperiores assumenda, at, aut consequuntur culpa delectus deserunt ducimus enim error eum id ipsam itaque magnam maxime molestias nobis odio omnis placeat porro possimus provident quae quaerat quasi quo quod recusandae repellat reprehenderit sit suscipit tempore temporibus tenetur ut vitae voluptatem. Architecto, consequuntur cupiditate debitis dolore doloribus, dolorum ducimus earum id itaque, nisi nostrum possimus quae quos sit vel. Animi eligendi minus sed!
-          </div>
-        </li>
-        <li>
-          <div>
-            <p>2022</p>
-            <h3>Auto-formation</h3>
-          </div>
-        </li>
-        <li>
-          <div>
-            <p>2022</p>
-            <h3>Auto-formation</h3>
-          </div>
-        </li>
+    <div className={cursusStyles.container}>
+      <ul className={cursusStyles.list}>
+        <CursusLine
+          year={'Aujourd\'hui'}
+          name={'auto-formation'}
+          description={'cursus'}
+          technologies={["typescript", "next", "postgresql", "prisma", "rust"]}
+        />
+        <CursusLine
+          year={'Juil. 2023'}
+          name={'Obtention du titre Développeur Web/Web mobile'}
+          description={'cursus'}
+        />
+        <CursusLine
+          year={'Mai 2023'}
+          name={'stage - Le temple du Jeu'}
+          description={'cursus'}
+          technologies={["typescript", "vue", "php", "codeigniter", "mariadb", "apache"]}
+        />
+        <CursusLine
+          year={'Nov. 2022'}
+          name={'Ecole ENI'}
+          description={'cursus'}
+          technologies={["javascript", "php", "css", "html", "java", "kotlin", "symfony",]}
+        />
+        <CursusLine
+          year={'Mar. 2022'}
+          name={'Fullstack Open'}
+          description={'cursus'}
+          technologies={["javascript", "typescript", "reactjs", "postgresql", "mongo", "graphql", "docker"]}
+        />
+        <CursusLine
+          year={'Dec. 2021'}
+          name={'Java Programming I & II'}
+          description={'cursus'}
+          technologies={["java", "javafx"]}
+        />
       </ul>
     </div>
   )
+}
+
+const CursusLine = (
+  {
+    year,
+    name,
+    description,
+    technologies
+  }: {
+  year: string,
+  name: string,
+  description: string,
+  technologies?: Technologies[]
+}) => {
+  return (
+    <li className={cursusStyles.line}>
+      <div className={cursusStyles.lineContainer}>
+        <div className={cursusStyles.titleContainer}>
+          <h3 className={josefinSans.className}>{year}</h3>
+        </div>
+        <div className={cursusStyles.contentContainer}>
+          <h3 className={josefinSans.className}>{name}</h3>
+          {technologies && <TechnologiesContainer technologies={technologies}/>}
+          <p>{description}</p>
+        </div>
+      </div>
+    </li>
+)
 }

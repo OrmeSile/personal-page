@@ -25,3 +25,5 @@ type Technologies =
   | 'vue'
   | 'webpack'
   | 'apache'
+  | 'rust'
+  | 'javafx'

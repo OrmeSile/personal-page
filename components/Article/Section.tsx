@@ -1,4 +1,6 @@
 import articleStyles from './article.module.css'
+import {Josefin_Sans} from "next/font/google";
+const josefinSans = Josefin_Sans({subsets: ['latin']})
 export const Section = (
   {
     id,
@@ -14,7 +16,7 @@ export const Section = (
   return (
     <section id={id} className={articleStyles.section}>
       <div className={articleStyles.descriptionContainer}>
-      <h2 className={`${articleStyles.title}`}>{title}</h2>
+      <h2 className={`${articleStyles.title} ${josefinSans.className}`}>{title}</h2>
         {description && <p>{description}</p>}
       </div>
       {children}

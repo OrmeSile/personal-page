@@ -85,7 +85,7 @@
 }
 
 .card {
-    border-radius: 1em 1em 0.5em 0.5em;
+    border-radius: 2rem 2rem 1rem 1rem;
     overflow: hidden;
     display: flex;
     flex-flow: column nowrap;
@@ -94,23 +94,30 @@
     align-items: center;
     justify-content: flex-start;
     border: solid 1px var(--btn-secondary);
+    width: auto;
+    height: auto;
     @media screen and (min-width: 768px) {
         padding: 2rem;
     }
 }
+.card >p {
+    padding: 1rem;
+}
 
 .linkContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-top: solid var(--btn-secondary) 1px;
     width: 100%;
-    height: 3rem;
+    height: 5rem;
 }
 
 .cardContent {
     display: flex;
     flex-flow: column nowrap;
+    width: 100%;
     padding: 0 1rem 1rem 1rem;
-    flex-grow: 1;
-    height: 100%;
 }
 
 .cardContainer {
@@ -124,4 +131,8 @@
 
 .link{
     color: var(--anchor);
+}
+
+.description {
+    padding: 0 2rem;
 }

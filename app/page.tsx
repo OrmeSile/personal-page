@@ -55,7 +55,7 @@ export default function Home() {
                 alt={''}
                 title={'Memos'}
                 link={'https://github.com/OrmeSile/memolists'}
-                description={` quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.`}
+                description={'quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.'}
 
               />
               <ProjectCard
@@ -92,6 +92,11 @@ export default function Home() {
         <Article>
           <Section id={'cursus'} title={'Cursus'}>
             <CursusBlock/>
+          </Section>
+        </Article>
+        <Article>
+          <Section id={'cv'} title={'CV'}>
+
           </Section>
         </Article>
       </main>
