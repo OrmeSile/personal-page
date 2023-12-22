@@ -1,3 +1,4 @@
+declare module '*.pdf'
 type FlashType = 'success' | 'info' | 'error'
 type Technologies =
   'codeigniter'

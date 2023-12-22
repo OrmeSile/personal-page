@@ -8,6 +8,13 @@ module.exports = (phase, {defaultConfig}) => {
       test: /\.svg$/i,
       use: ['@svgr/webpack'],
     })
+    config.module.rules.push({
+      test: /\.pdf/,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/[hash][ext]'
+      },
+    })
     config.resolve.alias.canvas = false
     return config
   }

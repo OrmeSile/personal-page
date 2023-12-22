@@ -5,6 +5,8 @@ import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import {Josefin_Sans} from "next/font/google";
 const josefinSans = Josefin_Sans({subsets: ['latin']})
+import pdf from '@/public/pdf/CV-rev.pdf'
+import fullPdf from '@/public/pdf/CV-rev-full.pdf'
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.js',
@@ -27,11 +29,11 @@ export const PDFViewer = () => {
 
   return (
     <div ref={containerRef}>
-      <a href={"/pdf/CV-rev-full.pdf"} className={`linkButton ${josefinSans.className}`} download={'cv'}>
+      <a href={fullPdf} className={`linkButton ${josefinSans.className}`} download={'cv'}>
         Télécharger
       </a>
       <Document
-        file={'/pdf/CV-rev.pdf'}>
+        file={pdf}>
         <Page
           width={width}
           pageNumber={1}
