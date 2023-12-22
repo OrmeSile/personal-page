@@ -15,6 +15,7 @@ import {FlashContainer} from "@/components/Flash/FlashContainer";
 import {OverflowBlock} from "@/components/global/OverflowBlock";
 import {useRef} from "react";
 import {useIsScrolledAfter} from "@/hooks/useIsScrolledAfter";
+import {CursusBlock} from "@/components/Cursus/CursusBlock";
 
 
 export default function Home() {
@@ -90,7 +91,7 @@ export default function Home() {
         </Article>
         <Article>
           <Section id={'cursus'} title={'Cursus'}>
-
+            <CursusBlock/>
           </Section>
         </Article>
       </main>
