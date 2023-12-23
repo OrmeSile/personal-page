@@ -39,7 +39,6 @@ export const PDFViewer = () => {
         <Page
           width={width}
           pageNumber={1}
-          height={width! * 1.33}
         />
       </Document>
     </div>
