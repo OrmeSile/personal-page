@@ -4,6 +4,7 @@ import {useEffect, useRef, useState} from "react";
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import {Josefin_Sans} from "next/font/google";
+
 const josefinSans = Josefin_Sans({subsets: ['latin']})
 import pdf from '@/public/pdf/CV-rev.pdf'
 import fullPdf from '@/public/pdf/CV-rev-full.pdf'
@@ -29,7 +30,8 @@ export const PDFViewer = () => {
 
   return (
     <div ref={containerRef}>
-      <a href={fullPdf} className={`linkButton ${josefinSans.className}`} download={'Vivien-L-Helguen-CV'}>
+      <a href={fullPdf} className={`linkButton ${josefinSans.className}`}
+         download={'Vivien-L-Helguen-CV'}>
         Télécharger
       </a>
       <Document
