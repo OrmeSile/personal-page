@@ -17,8 +17,9 @@ a {
     color: rgb(49, 137, 199)
 }
 
-.overflow-block{
-
+.intro {
+    font-size: 2rem;
+    color: red;
 }
 .overflow-block ~ main {
     height: 100%;

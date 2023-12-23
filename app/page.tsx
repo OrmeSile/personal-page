@@ -17,6 +17,7 @@ import {useRef} from "react";
 import {useIsScrolledAfter} from "@/hooks/useIsScrolledAfter";
 import {CursusBlock} from "@/components/Cursus/CursusBlock";
 import {PDFViewer} from "@/components/CV/PDFViewer";
+import {IntroBlock} from "@/components/Article/IntroBlock";
 
 
 export default function Home() {
@@ -38,6 +39,7 @@ export default function Home() {
           sizes={"(max-width: 768px) 100vw, 80vw"}
         />
         <Brand ref={brandRef} name={'Vivien\nL\'Hel\u00ADguen'} subtext={'Webdev'}/>
+        <IntroBlock/>
         <Article>
           <Section id={'projets'} title={'Projets'}
                    description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dicta dignissimos dolores illum nemo nostrum quae repellat! Amet,magni, quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.'}>
