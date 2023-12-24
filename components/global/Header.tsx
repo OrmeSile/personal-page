@@ -6,9 +6,6 @@ import {ColorModeToggle} from "@/components/global/ColorModeToggle";
 import {NavItem} from "@/components/global/NavItem";
 import {useDispatch} from "react-redux";
 import {set, toggle} from "@/stores/overflowSlice";
-import {Josefin_Sans} from "next/font/google";
-
-const josefinSans = Josefin_Sans({subsets: ['latin']})
 
 export const Header = ({extend}: { extend: boolean }) => {
   const [isChecked, setIsChecked] = useState(false)
@@ -57,7 +54,7 @@ export const Header = ({extend}: { extend: boolean }) => {
         {extend && !isLarge && (
           <div className={headerStyles.brandContainer}>
             <h2
-              className={`${headerStyles.followBrand} ${josefinSans.className}`}>Vivien
+              className={headerStyles.followBrand}>Vivien
               L&apos;Helguen</h2>
           </div>)
         }

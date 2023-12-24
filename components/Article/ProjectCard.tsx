@@ -1,9 +1,6 @@
 import Image, {StaticImageData} from "next/image";
 import Link from "next/link";
 import articleStyles from './article.module.css'
-import {Josefin_Sans} from "next/font/google";
-
-const josefinSans = Josefin_Sans({subsets: ['latin']})
 
 import React from "react";
 import {
@@ -42,7 +39,7 @@ export const ProjectCard = (
       </div>
       <div className={articleStyles.cardContent}>
         <h3
-          className={`${articleStyles.cardTitle} ${josefinSans.className}`}>{title}</h3>
+          className={articleStyles.cardTitle}>{title}</h3>
         {technologies && <TechnologiesContainer technologies={technologies}/>}
         <p className={articleStyles.description}>{description}</p>
       </div>

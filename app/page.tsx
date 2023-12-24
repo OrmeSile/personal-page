@@ -38,7 +38,7 @@ export default function Home() {
           loading={"eager"}
           sizes={"(max-width: 768px) 100vw, 80vw"}
         />
-        <Brand ref={brandRef} name={'Vivien\nL\'Hel\u00ADguen'} subtext={'Webdev'}/>
+        <Brand ref={brandRef} name={'Vivien\nL\'Hel\u00ADguen'} subtext={'Webdev'} position={'Nantes'}/>
         <IntroBlock/>
         <Article>
           <Section id={'projets'} title={'Projets'}

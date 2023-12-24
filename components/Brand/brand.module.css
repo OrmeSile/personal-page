@@ -37,8 +37,15 @@
     color: var(--subtext-color);
     font-size: 8rem;
     margin: 0;
+    text-align: center;
+    height: 8rem;
     @media screen and (min-width: 768px) {
+        text-align: left;
         padding: 0 2rem;
         margin-left: 2rem;
     }
+}
+
+.position {
+    font-size: 6rem;
 }

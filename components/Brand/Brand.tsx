@@ -1,19 +1,19 @@
-import {Josefin_Sans} from "next/font/google"
 import brandStyles from './brand.module.css'
 import {ForwardedRef, forwardRef} from "react";
+import Position from "@/public/icons/map-marker.svg"
 
-const josefinSans = Josefin_Sans({subsets: ['latin']})
 export const Brand = forwardRef(
   function Brand(
-    {name, subtext}: { name: string, subtext: string },
+    {name, subtext, position}: { name: string, subtext: string, position: string },
     ref: ForwardedRef<HTMLDivElement>
   ) {
 
     return (
       <div ref={ref}
-           className={`${brandStyles.container} ${josefinSans.className}`}>
+           className={brandStyles.container}>
         <h1 className={brandStyles.title}>{name}</h1>
         <h2 className={brandStyles.subtext}>{subtext}</h2>
+        <h3 className={`${brandStyles.subtext} ${brandStyles.position}`}><Position style={{stroke: 'var(--subtext-color)', height: '60%', overflow: 'visible'}}/>{position}</h3>
       </div>
     )
   })

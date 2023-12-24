@@ -4,10 +4,10 @@ import {
   FallbackStyles, StyleInjector,
 } from "@/components/theme/StyleInjector";
 import {StoreProvider} from "@/stores/StoreProvider";
+import {Josefin_Sans} from "next/font/google";
 
 
-// const inter = Inter({subsets: ['latin']})
-
+const josefinSans = Josefin_Sans({subsets: ['latin']})
 export const metadata: Metadata = {}
 export default function RootLayout({
                                      children,
@@ -21,7 +21,7 @@ export default function RootLayout({
       <title>Vivien L&apos;Helguen</title>
       <FallbackStyles/><title></title>
     </head>
-    <body>
+    <body className={josefinSans.className}>
     <StyleInjector/>
     <StoreProvider>
       {children}

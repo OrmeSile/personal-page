@@ -2,8 +2,6 @@ import cursusStyles from './cursus.module.css'
 import {
   TechnologiesContainer
 } from "@/components/Article/TechnologiesContainer";
-import {Josefin_Sans} from "next/font/google";
-const josefinSans = Josefin_Sans({subsets: ['latin']})
 
 export const CursusBlock = () => {
   return (
@@ -65,10 +63,10 @@ const CursusLine = (
     <li className={cursusStyles.line}>
       <div className={cursusStyles.lineContainer}>
         <div className={cursusStyles.titleContainer}>
-          <h3 className={josefinSans.className}>{year}</h3>
+          <h3>{year}</h3>
         </div>
         <div className={cursusStyles.contentContainer}>
-          <h3 className={josefinSans.className}>{name}</h3>
+          <h3>{name}</h3>
           {technologies && <TechnologiesContainer technologies={technologies}/>}
           <p>{description}</p>
         </div>

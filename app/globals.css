@@ -19,7 +19,6 @@ a {
 
 .intro {
     font-size: 2rem;
-    color: red;
 }
 .overflow-block ~ main {
     height: 100%;
