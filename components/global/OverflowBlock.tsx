@@ -4,7 +4,7 @@ import {RootState} from "@/stores/store";
 
 export const OverflowBlock = () => {
   const {visible} = useSelector((state: RootState) => state.overflow)
-  return (!visible &&
+  return (visible &&
     <>
       {
         <div  className={'overflow-block'} style={{
