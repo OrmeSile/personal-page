@@ -1,15 +1,15 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-const initialState = {hidden: false}
+const initialState = {visible: false}
 const overflowSlice = createSlice({
   name: 'overflow',
   initialState,
   reducers: {
     toggle: (state)=>{
-      state.hidden = !state.hidden
+      state.visible = !state.visible
     },
     set: (state,  action) => {
-      state.hidden = action.payload
+      state.visible = action.payload
     }
   }
 })

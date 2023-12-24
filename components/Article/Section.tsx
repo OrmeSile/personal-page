@@ -13,7 +13,8 @@ export const Section = (
     children?: React.ReactNode,
   }) => {
   return (
-    <section id={id} className={articleStyles.section}>
+    <section  className={articleStyles.section}>
+      <div id={id} style={{position: 'relative', top: '-150px'}}></div>
       <div className={articleStyles.descriptionContainer}>
         {title && <h2 className={articleStyles.title}>{title}</h2>}
         {description && <p>{description}</p>}

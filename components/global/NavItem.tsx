@@ -1,20 +1,29 @@
 import listStyles from '@/styles/list.module.css'
 import Link from "next/link";
+import {useDispatch} from "react-redux";
+import {set} from "@/stores/overflowSlice";
+
 export const NavItem = (
   {
     text,
     link,
     children
-  } : {
+  }: {
     text?: string,
     link?: string,
     children?: React.ReactNode
   }) => {
 
+  const dispatch = useDispatch()
   return (
     <li className={`${listStyles.navItem} ${link ? listStyles.hover : ''}`}>
-      {children ? children : text}
-      {link && <Link href={link}/>}
+      {children}
+      {link ?
+        <a
+          href={link}
+           className={listStyles.link}
+          onClick={() => dispatch(set(false))}
+        >{text}</a> : <p>{text}</p>}
     </li>
   )
 }

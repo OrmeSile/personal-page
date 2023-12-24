@@ -10,6 +10,7 @@ export const Brand = forwardRef(
 
     return (
       <div ref={ref}
+           id={'brand'}
            className={brandStyles.container}>
         <h1 className={brandStyles.title}>{name}</h1>
         <h2 className={brandStyles.subtext}>{subtext}</h2>

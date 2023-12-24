@@ -23,7 +23,7 @@ import {IntroBlock} from "@/components/Article/IntroBlock";
 export default function Home() {
   const brandRef = useRef<HTMLDivElement>(null)
   const scrollContainerRef = useRef<HTMLElement>(null)
-  const isAfter = useIsScrolledAfter(brandRef, scrollContainerRef, 200)
+  const isAfter = useIsScrolledAfter(200, brandRef)
   return (
     <>
       <OverflowBlock/>
@@ -40,7 +40,7 @@ export default function Home() {
         />
         <Brand ref={brandRef} name={'Vivien\nL\'Hel\u00ADguen'} subtext={'Webdev'} position={'Nantes'}/>
         <IntroBlock/>
-        <Article>
+        <Article id={'#projets'}>
           <Section id={'projets'} title={'Projets'}
                    description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dicta dignissimos dolores illum nemo nostrum quae repellat! Amet,magni, quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.'}>
             <GridContainer>

@@ -3,14 +3,45 @@
     position: fixed;
     right: 0;
     @media screen and (min-width: 768px) {
+        transition: top .2s, width .2s, height .2s;
         overflow: hidden;
-        position: absolute;
+        position: fixed;
         top: 2em;
-        height: 5em;
         box-sizing: border-box;
         display: flex;
         width: 100%;
     }
+}
+
+
+.child {
+    position: absolute;
+    height: 100vh;
+    overflow: hidden;
+    width: 0;
+    align-items: flex-start;
+    display: flex;
+    right: 0;
+    background: var(--bg-secondary);
+    @media screen and (min-width: 768px) {
+        align-items: center;
+        justify-content: center;
+        position: initial;
+        transition: none;
+        height: 8rem;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+        border-radius: .5rem;
+        width: auto;
+        padding: 0 2rem;
+        margin: auto;
+    }
+}
+.side {
+    height: auto;
+    width: 5rem;
+    right: 0;
+    position: fixed;
+    top: 0;
 }
 
 .container .input:checked {
@@ -19,7 +50,6 @@
     height: 100vh;
     overflow-x: hidden;
 }
-
 .brandContainer {
     box-shadow: 0 1px 3px 3px rgba(0,0,0,0.5);
     position: fixed;
@@ -32,6 +62,7 @@
     align-items: center;
     z-index: 100;
 }
+
 .followBrand {
     margin-left: 1rem;
     width: 100%;
@@ -64,31 +95,6 @@
     }
 }
 
-.child {
-    /*transform: translateX(0);*/
-    position: absolute;
-    height: 100vh;
-    /*transition: transform .2s ease-out;*/
-    overflow: hidden;
-    width: 0;
-    align-items: flex-start;
-    display: flex;
-    right: 0;
-    background: var(--bg-secondary);
-    @media screen and (min-width: 768px) {
-        align-items: center;
-        justify-content: center;
-        position: initial;
-        transition: none;
-        height: 5em;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
-        border-radius: .5rem;
-        width: auto;
-        padding: 0 2rem;
-        margin: auto;
-    }
-}
-
 .menu:has(.input:checked) {
     border: var(--btn-primary) 2px solid;
     border-radius: 50%;
@@ -107,15 +113,16 @@
     margin: 0;
     display: flex;
     height: auto;
+    padding: 8rem 0 0 0;
     align-items: center;
     flex-flow: column nowrap;
-    padding: 5em 0;
     width: 100%;
     @media screen and (min-width: 768px) {
         padding: 0;
         flex-flow: row nowrap;
         gap: 1em;
         width: auto;
+        height: 100%;
     }
 }
 

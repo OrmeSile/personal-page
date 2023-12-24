@@ -1,7 +1,7 @@
 'use client'
-import {RefObject, useEffect, useState} from "react";
+import {RefObject, useEffect, useRef, useState} from "react";
 
-export const useIsScrolledAfter = (ref: RefObject<HTMLElement>, container: RefObject<HTMLElement>, offset: number) => {
+export const useIsScrolledAfter = (offset: number, ref: RefObject<HTMLElement>, container?: RefObject<HTMLElement>) => {
   const [isAfter, setIsAfter] = useState(false)
   const getElementLowestPosition = () => {
     const elementLowestPosition = ref.current?.getBoundingClientRect().bottom
@@ -13,10 +13,10 @@ export const useIsScrolledAfter = (ref: RefObject<HTMLElement>, container: RefOb
   }
   useEffect(() => {
     getElementLowestPosition()
-    const containerCopy = container.current
-    containerCopy!.addEventListener('scroll', getElementLowestPosition)
+    const scrollContainer = container ? container.current! : window
+    scrollContainer.addEventListener('scroll', getElementLowestPosition)
     return () => {
-      containerCopy!.removeEventListener('scroll', getElementLowestPosition)
+      scrollContainer.removeEventListener('scroll', getElementLowestPosition)
     }
   }, [])
   return isAfter

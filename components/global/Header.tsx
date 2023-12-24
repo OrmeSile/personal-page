@@ -4,16 +4,16 @@ import {useIsLargeMediaQuery} from "@/hooks/useIsLargeMediaQuery";
 import React, {useEffect, useState} from "react";
 import {ColorModeToggle} from "@/components/global/ColorModeToggle";
 import {NavItem} from "@/components/global/NavItem";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {set, toggle} from "@/stores/overflowSlice";
+import {RootState} from "@/stores/store";
 
 export const Header = ({extend}: { extend: boolean }) => {
-  const [isChecked, setIsChecked] = useState(false)
   const isLarge = useIsLargeMediaQuery()
   const dispatch = useDispatch()
+  const isChecked = useSelector((state:RootState) => state.overflow.visible)
 
   useEffect(() => {
-    setIsChecked(false)
     dispatch(set(false))
   }, [isLarge, dispatch])
 
@@ -41,15 +41,35 @@ export const Header = ({extend}: { extend: boolean }) => {
     child: {},
     container: {}
   }
+
+  const largeContainerScroll = isLarge && extend
+    ?
+    {
+      container: {
+        top: '3rem',
+        width: '10rem',
+      } as React.CSSProperties,
+      child: {
+        height: 'auto',
+        padding: '2rem 2rem',
+        gap: 0
+      }
+    }
+    :
+    {
+      container: {},
+      child: {}
+
+    }
   const isLargeDisplay = isLarge ? {display: 'none'} : undefined
 
   const handleChange = () => {
-    setIsChecked(!isChecked)
     dispatch(toggle())
   }
 
   return (
-    <header className={headerStyles.container} style={checkedStyles.container}>
+    <header className={headerStyles.container}
+            style={{...checkedStyles.container, ...largeContainerScroll.container}}>
       <div>
         {extend && !isLarge && (
           <div className={headerStyles.brandContainer}>
@@ -58,6 +78,7 @@ export const Header = ({extend}: { extend: boolean }) => {
               L&apos;Helguen</h2>
           </div>)
         }
+
         <label htmlFor={'input'}
                style={{...checkedStyles.menu, ...isLargeDisplay}}
                className={headerStyles.menu}
@@ -72,12 +93,20 @@ export const Header = ({extend}: { extend: boolean }) => {
         </label>
       </div>
       <div
-        style={{...checkedStyles.child}}
+        style={{...checkedStyles.child, ...largeContainerScroll.child}}
         className={headerStyles.child}>
-        <ul className={`${headerStyles.list}`}>
-          <NavItem text={'Projets'}/>
-          <NavItem text={'Cursus'}/>
-          <NavItem text={'CV'}/>
+        <ul style={isLarge && extend ?
+          {
+            flexFlow: 'column nowrap',
+            gap: 0,
+            height: '30rem'
+          } :
+          {}
+        } className={`${headerStyles.list}`}>
+          <NavItem text={'Accueil'} link={'#brand'}/>
+          <NavItem text={'Projets'} link={'#projets'}/>
+          <NavItem text={'Cursus'} link={'#cursus'}/>
+          <NavItem text={'CV'} link={'#cv'}/>
           <NavItem text={'Contact'}/>
           <NavItem>
             <ColorModeToggle/>
