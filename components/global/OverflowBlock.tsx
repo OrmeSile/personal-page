@@ -3,8 +3,8 @@ import {useSelector} from "react-redux";
 import {RootState} from "@/stores/store";
 
 export const OverflowBlock = () => {
-  const {hidden} = useSelector((state: RootState) => state.overflow)
-  return (hidden &&
+  const {visible} = useSelector((state: RootState) => state.overflow)
+  return (!visible &&
     <>
       {
         <div  className={'overflow-block'} style={{
