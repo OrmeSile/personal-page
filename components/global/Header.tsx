@@ -8,7 +8,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {set, toggle} from "@/stores/overflowSlice";
 import {RootState} from "@/stores/store";
 
-export const Header = ({extend}: { extend: boolean }) => {
+export const Header = ({isAfter}: { isAfter: boolean }) => {
   const isLarge = useIsLargeMediaQuery()
   const dispatch = useDispatch()
   const isChecked = useSelector((state:RootState) => state.overflow.visible)
@@ -42,7 +42,7 @@ export const Header = ({extend}: { extend: boolean }) => {
     container: {}
   }
 
-  const largeContainerScroll = isLarge && extend
+  const largeContainerScroll = isLarge && isAfter
     ?
     {
       container: {
@@ -71,7 +71,8 @@ export const Header = ({extend}: { extend: boolean }) => {
     <header className={headerStyles.container}
             style={{...checkedStyles.container, ...largeContainerScroll.container}}>
       <div>
-        {extend && !isLarge && (
+        {
+          isAfter && !isLarge && (
           <div className={headerStyles.brandContainer}>
             <h2
               className={headerStyles.followBrand}>Vivien
@@ -95,7 +96,7 @@ export const Header = ({extend}: { extend: boolean }) => {
       <div
         style={{...checkedStyles.child, ...largeContainerScroll.child}}
         className={headerStyles.child}>
-        <ul style={isLarge && extend ?
+        <ul style={isLarge && isAfter ?
           {
             flexFlow: 'column nowrap',
             gap: 0,

@@ -28,7 +28,7 @@ export default function Home() {
     <>
       <OverflowBlock/>
       <FlashContainer/>
-      <Header extend={isAfter}/>
+      <Header isAfter={isAfter}/>
       <main ref={scrollContainerRef} className={homepageStyles.main} >
         <Image
           className={homepageStyles.background}
