@@ -7,8 +7,7 @@ import {StoreProvider} from "@/stores/StoreProvider";
 import {Josefin_Sans} from "next/font/google";
 
 const josefinSans = Josefin_Sans({subsets: ['latin']})
-export const metadata: Metadata = {
-}
+export const metadata: Metadata = {}
 export default function RootLayout({
                                      children,
                                    }: {
