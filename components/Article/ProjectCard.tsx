@@ -44,9 +44,9 @@ export const ProjectCard = (
         <p className={articleStyles.description}>{description}</p>
       </div>
       {link && <div className={articleStyles.linkContainer}>
-        <Link href={link} className={articleStyles.link}>
-          Lien
-        </Link>
+      <a href={link} target={"_blank"} className={articleStyles.link}>
+          Sources
+        </a>
       </div>}
     </div>
   )

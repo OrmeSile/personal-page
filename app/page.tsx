@@ -44,7 +44,7 @@ export default function Home() {
         <IntroBlock/>
         <Article id={'#projets'}>
           <Section id={'projets'} title={'Projets'}
-                   description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dicta dignissimos dolores illum nemo nostrum quae repellat! Amet,magni, quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.'}>
+                   description={`Voici une sélection de projets sur lesquels j'ai pu travailler et me former.`}>
             <GridContainer>
               <
                 ProjectCard
@@ -60,7 +60,7 @@ export default function Home() {
                 alt={''}
                 title={'Memos'}
                 link={'https://github.com/OrmeSile/memolists'}
-                description={'quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.'}
+                description={`Projet personnel. Découverte de NextJS et de son écosystème, après plusieurs mois sans utiliser de React. C'était aussi un moyen pour moi d'appréhender le fonctionnement du SSR, et des Server/Client components.`}
 
               />
               <ProjectCard
@@ -76,7 +76,8 @@ export default function Home() {
                   "gitlab",
                   "apache"
                 ]}
-                description={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpadicta dignissimos dolores illum nemo nostrum quae repellat! Amet,magni, quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.`}
+                description={`Projet de stage. Découverte de Vue, ainsi que de CodeIgniter, framework historique PHP.
+                 Point de complexité: le schéma de base de données, étant donné la grande quantité de paramètres d'une carte à collectionner.`}
               />
               <ProjectCard
                 technologies={[
@@ -89,7 +90,7 @@ export default function Home() {
                 alt={''}
                 title={'Movie List'}
                 link={'https://github.com/OrmeSile/movie-list'}
-                description={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpadicta dignissimos dolores illum nemo nostrum quae repellat! Amet,magni, quae. Cumque, earum error et eveniet illo ipsam istevoluptatibus.`}
+                description={`Projet personnel antérieur à mes études. Découverte de Symfony et réalisation d'un site en n'utilisant que la documentation du framework.`}
               />
             </GridContainer>
           </Section>
