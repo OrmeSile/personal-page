@@ -120,6 +120,26 @@ export default function Home() {
           </Section>
         </Article>
       </main>
+      <footer style={{
+        height: '20rem',
+        overflow: "hidden",
+        display: 'flex',
+        alignItems: 'center',
+        flexFlow: 'column nowrap'
+      }}>
+        <p>Réalisé avec <span color={'var(--accent-color)'}>Next.js</span>. <a
+          href={'https://github.com/Ormesile/personal-page'} target={"_blank"}>Code source</a></p>
+        <p style={{fontSize: '1.5rem', padding: 0, margin: '1rem 0 0 0'}}>
+          line icons: <a style={{fontSize: '1.5rem'}}
+                         href={'https://linearicons.com/'}>Linear Icons CC BY-SA
+          4.0</a>
+        </p>
+        <p style={{fontSize: '1.5rem', margin: 0}}>
+          color icons: <a style={{fontSize: '1.5rem'}}
+                          href={"https://github.com/vscode-icons/vscode-icons"}>VScode
+          Icons CC BY-SA 4.0</a>
+        </p>
+      </footer>
     </>
   )
 }
