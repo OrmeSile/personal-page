@@ -18,6 +18,7 @@ import {useIsScrolledAfter} from "@/hooks/useIsScrolledAfter";
 import {CursusBlock} from "@/components/Cursus/CursusBlock";
 import {PDFViewer} from "@/components/CV/PDFViewer";
 import {IntroBlock} from "@/components/Article/IntroBlock";
+import {ObfuscatedField} from "@/components/ObfuscatedField/ObfuscatedField";
 
 
 export default function Home() {
@@ -29,7 +30,7 @@ export default function Home() {
       <OverflowBlock/>
       <FlashContainer/>
       <Header isAfter={isAfter}/>
-      <main ref={scrollContainerRef} className={homepageStyles.main} >
+      <main ref={scrollContainerRef} className={homepageStyles.main}>
         <Image
           className={homepageStyles.background}
           src={backgroundImage}
@@ -38,7 +39,8 @@ export default function Home() {
           loading={"eager"}
           sizes={"(max-width: 768px) 100vw, 80vw"}
         />
-        <Brand ref={brandRef} name={'Vivien\nL\'Hel\u00ADguen'} subtext={'Webdev'} position={'Nantes'}/>
+        <Brand ref={brandRef} name={'Vivien\nL\'Hel\u00ADguen'}
+               subtext={'Webdev'} position={'Nantes'}/>
         <IntroBlock/>
         <Article id={'#projets'}>
           <Section id={'projets'} title={'Projets'}
@@ -100,6 +102,21 @@ export default function Home() {
         <Article>
           <Section id={'cv'} title={'CV'}>
             <PDFViewer/>
+          </Section>
+        </Article>
+        <Article>
+          <Section id={'contact'} title={'Contact'}>
+            <div style={{
+              display: 'flex',
+              flexFlow: 'column nowrap',
+              width: '80%',
+              margin: 'auto'
+            }}>
+              <ObfuscatedField content={process.env.NEXT_PUBLIC_MAIL!}
+                               id={'mail'} type={"mail"}/>
+              <ObfuscatedField content={process.env.NEXT_PUBLIC_LINKEDIN!}
+                               id={'linkedin'} type={"linkedin"}/>
+            </div>
           </Section>
         </Article>
       </main>

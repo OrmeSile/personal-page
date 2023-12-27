@@ -6,7 +6,6 @@ import {
 import {StoreProvider} from "@/stores/StoreProvider";
 import {Josefin_Sans} from "next/font/google";
 
-
 const josefinSans = Josefin_Sans({subsets: ['latin']})
 export const metadata: Metadata = {}
 export default function RootLayout({
@@ -18,8 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
     <head>
-      <title>Vivien L&apos;Helguen</title>
-      <FallbackStyles/><title></title>
+      <title>{"Vivien L'Helguen - Orme"}</title>
+      <FallbackStyles/>
     </head>
     <body className={josefinSans.className}>
     <StyleInjector/>

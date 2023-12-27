@@ -1,5 +1,4 @@
 import listStyles from '@/styles/list.module.css'
-import Link from "next/link";
 import {useDispatch} from "react-redux";
 import {set} from "@/stores/overflowSlice";
 

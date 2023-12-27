@@ -2,7 +2,6 @@ import articleStyles from './article.module.css'
 
 export const Article = (
   {
-    id,
     children
   }: {
     className?: string,

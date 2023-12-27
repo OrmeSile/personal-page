@@ -1,7 +1,7 @@
 'use client'
 import headerStyles from "@/styles/header.module.css"
 import {useIsLargeMediaQuery} from "@/hooks/useIsLargeMediaQuery";
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {ColorModeToggle} from "@/components/global/ColorModeToggle";
 import {NavItem} from "@/components/global/NavItem";
 import {useDispatch, useSelector} from "react-redux";

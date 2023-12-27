@@ -43,3 +43,15 @@ a {
     text-decoration: none;
     text-underline: none;
 }
+
+p {
+    font-size: 2rem;
+}
+
+.icon {
+    stroke: var(--text-primary);
+    fill: var(--text-primary);
+    height: 30px;
+    width: auto;
+
+}

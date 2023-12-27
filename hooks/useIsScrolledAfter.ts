@@ -1,5 +1,5 @@
 'use client'
-import {RefObject, useEffect, useRef, useState} from "react";
+import {RefObject, useEffect, useState} from "react";
 
 export const useIsScrolledAfter = (offset: number, ref: RefObject<HTMLElement>, container?: RefObject<HTMLElement>) => {
   const [isAfter, setIsAfter] = useState(false)

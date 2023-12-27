@@ -1,5 +1,5 @@
 import articleStyles from './article.module.css'
-import {Josefin_Sans} from "next/font/google";
+
 export const Section = (
   {
     id,
