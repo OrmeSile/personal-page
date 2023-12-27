@@ -107,8 +107,8 @@ export const Header = ({isAfter}: { isAfter: boolean }) => {
           <NavItem text={'Accueil'} link={'#brand'}/>
           <NavItem text={'Projets'} link={'#projets'}/>
           <NavItem text={'Cursus'} link={'#cursus'}/>
+          <NavItem text={'Contact'} link={'#contact'}/>
           <NavItem text={'CV'} link={'#cv'}/>
-          <NavItem text={'Contact'}/>
           <NavItem>
             <ColorModeToggle/>
           </NavItem>
