@@ -1,0 +1,14 @@
+.field{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    gap: 5rem;
+    height: 5rem;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--text-color);
+    text-decoration: none;
+    overflow: hidden;
+}
+.field:hover{
+    background: var(--accent-color);
+}

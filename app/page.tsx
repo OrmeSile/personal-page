@@ -100,23 +100,22 @@ export default function Home() {
           </Section>
         </Article>
         <Article>
-          <Section id={'cv'} title={'CV'}>
-            <PDFViewer/>
+          <Section id={'contact'} title={'Contact'}>
+            <div>
+              <ObfuscatedField content={process.env.NEXT_PUBLIC_MAIL!}
+                               id={'mail'} type={"mail"}/>
+              <ObfuscatedField content={process.env.NEXT_PUBLIC_PHONE!}
+                               id={'phone'} type={'phone'}/>
+              <ObfuscatedField content={process.env.NEXT_PUBLIC_LINKEDIN!}
+                               id={'linkedin'} type={"linkedin"}/>
+              <ObfuscatedField content={process.env.NEXT_PUBLIC_GITHUB!}
+                               id={'github'} type={'github'}/>
+            </div>
           </Section>
         </Article>
         <Article>
-          <Section id={'contact'} title={'Contact'}>
-            <div style={{
-              display: 'flex',
-              flexFlow: 'column nowrap',
-              width: '80%',
-              margin: 'auto'
-            }}>
-              <ObfuscatedField content={process.env.NEXT_PUBLIC_MAIL!}
-                               id={'mail'} type={"mail"}/>
-              <ObfuscatedField content={process.env.NEXT_PUBLIC_LINKEDIN!}
-                               id={'linkedin'} type={"linkedin"}/>
-            </div>
+          <Section id={'cv'} title={'CV'}>
+            <PDFViewer/>
           </Section>
         </Article>
       </main>

@@ -52,6 +52,6 @@ p {
     stroke: var(--text-primary);
     fill: var(--text-primary);
     height: 30px;
-    width: auto;
+    width: 30px;
 
 }

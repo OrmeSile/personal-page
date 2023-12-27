@@ -29,4 +29,4 @@ type Technologies =
   | 'rust'
   | 'javafx'
 
-type ObfuscationFieldType = 'mail' | 'phone' | 'link' | 'linkedin' |'p'
+type ObfuscationFieldType = 'mail' | 'phone' | 'link' | 'linkedin' |'p' | 'github'
