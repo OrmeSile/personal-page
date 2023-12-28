@@ -19,13 +19,14 @@ module.exports = (phase, {defaultConfig}) => {
     return config
   }
 
+  //testing env presence
   // See https://github.com/gregrickaby/nextjs-github-pages.
   // Added after failing a deployment to pages
   return {...defaultConfig,
-    output: phase !== PHASE_DEVELOPMENT_SERVER ? 'export' : undefined,
-    assetPrefix: phase !== PHASE_DEVELOPMENT_SERVER ? process.env.PROD_BASE_URL : undefined,
-    basePath: phase !== PHASE_DEVELOPMENT_SERVER ? '/personal-page' : undefined,
-    images: phase !== PHASE_DEVELOPMENT_SERVER ? {unoptimized: true}: undefined,
+    output: (process.env.DOCKER_BUILD || phase === PHASE_DEVELOPMENT_SERVER) ? 'standalone' : 'export',
+    assetPrefix: (process.env.DOCKER_BUILD || phase === PHASE_DEVELOPMENT_SERVER) ? undefined : process.env.PROD_BASE_URL,
+    basePath: (process.env.DOCKER_BUILD || phase === PHASE_DEVELOPMENT_SERVER) ? undefined : '/personal-page',
+    images: (process.env.DOCKER_BUILD || phase === PHASE_DEVELOPMENT_SERVER) ? undefined:  {unoptimized: true},
     webpack: webpackConfig
   }
 }
