@@ -11,10 +11,8 @@
     }
 }
 
-.hover:hover {
-    @media (hover: hover) and (pointer: fine) {
-        background-color: var(--accent-color);
-    }
+.link:hover {
+    background-color: var(--accent-color);
 }
 
 .link {

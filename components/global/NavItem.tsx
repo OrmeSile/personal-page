@@ -15,7 +15,7 @@ export const NavItem = (
 
   const dispatch = useDispatch()
   return (
-    <li className={`${listStyles.navItem} ${link ? listStyles.hover : ''}`}>
+    <li className={listStyles.navItem}>
       {children}
       {link ?
         <a
