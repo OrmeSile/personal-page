@@ -11,6 +11,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: github-ssh
     steps:
       - name: Checkout
         uses: actions/checkout@v4
