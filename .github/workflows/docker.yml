@@ -41,5 +41,5 @@ jobs:
       - name: Run docker Container on remote server
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} -p ${{ secrets.REMOTE_SERVER_PORT }} << 'ENDSSH'
-          docker run -d nextjs-portfolio
+          docker run -d nextjs-portfolio -p ${{ secrets.DOCKER_EXPOSED_PORT }}:${{ secrets.DOCKER_INTERNAL_PORT }}
           ENDSSH
