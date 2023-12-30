@@ -1,7 +1,17 @@
+version: '3.9'
 services:
   nextjs:
     image:
-      nextjs-portfolio
+      nextjs:latest
     ports:
-      - 3000:8080
+      - '3000:3000'
+    restart: always
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - "/c/Users/orme/.ssl:/etc/nginx/ssl"
     restart: always

@@ -11,6 +11,7 @@ COPY package.json package-lock.json ./
 
 RUN npm ci
 
+# Required for sharp support on target server
 RUN npm install -g --arch=x64 --platform=linux --libc=glibc sharp
 
 
@@ -58,9 +59,9 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
-EXPOSE 8080
+EXPOSE 3000
 
-ENV PORT 8080
+ENV PORT 3000
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
