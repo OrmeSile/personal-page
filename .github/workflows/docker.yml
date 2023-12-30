@@ -5,13 +5,12 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: "docker"
+  group: "docker-ssh"
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: github-ssh
     steps:
       - name: Checkout
         uses: actions/checkout@v4
