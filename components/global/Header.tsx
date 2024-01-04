@@ -7,6 +7,8 @@ import {NavItem} from "@/components/global/NavItem";
 import {useDispatch, useSelector} from "react-redux";
 import {set, toggle} from "@/stores/overflowSlice";
 import {RootState} from "@/stores/store";
+import {Roboto_Flex} from "next/font/google";
+const roboto = Roboto_Flex({subsets: ['latin'], axes:["YOPQ"]})
 
 export const Header = ({isAfter}: { isAfter: boolean }) => {
   const isLarge = useIsLargeMediaQuery()
@@ -75,7 +77,7 @@ export const Header = ({isAfter}: { isAfter: boolean }) => {
           isAfter && !isLarge && (
           <div className={headerStyles.brandContainer}>
             <h2
-              className={headerStyles.followBrand}>Vivien
+              className={`${headerStyles.followBrand} ${roboto.className}`}>Vivien
               L&apos;Helguen</h2>
           </div>)
         }

@@ -64,8 +64,8 @@ export const COLORS = {
     dark: 'rgb(255,255,255)',
   },
   'subtext-color': {
-    light: 'rgb(50,50,50)',
-    dark: 'rgb(50,50,50)',
+    light: 'rgb(37, 34, 50)',
+    dark: 'rgb(37, 34, 50)',
   },
   'img-brightness': {
     light: 'none',

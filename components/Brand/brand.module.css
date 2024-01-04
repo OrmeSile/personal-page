@@ -28,6 +28,7 @@
     @media screen and (min-width: 768px) {
         text-align: left;
         margin-top: 15rem;
+        margin-left: 2rem;
         hyphens: none;
 
     }
