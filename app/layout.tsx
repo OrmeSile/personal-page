@@ -7,7 +7,9 @@ import {StoreProvider} from "@/stores/StoreProvider";
 import {Josefin_Sans} from "next/font/google";
 
 const josefinSans = Josefin_Sans({subsets: ['latin']})
-export const metadata: Metadata = {}
+export const metadata: Metadata = {
+  description: "Recherche un contrat de professionnalisation en développement (web) dans la région Nantaise pour continuer mes études."
+}
 export default function RootLayout({
                                      children,
                                    }: {
@@ -17,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
     <head>
-      <title>{"Vivien L'Helguen - Orme"}</title>
+      <title>{"orme - Vivien L'Helguen"}</title>
       <FallbackStyles/>
     </head>
     <body className={josefinSans.className}>
