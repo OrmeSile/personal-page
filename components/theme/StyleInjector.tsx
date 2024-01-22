@@ -14,8 +14,8 @@ export const setColorsByTheme = (currentColors?: typeof COLORS) => {
     colorMode = colorPreferenceFromLocalStorage
   } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     colorMode = 'dark'
-    window.localStorage.setItem('color-mode', colorMode)
   }
+  window.localStorage.setItem('color-mode', colorMode)
   root.style.setProperty('--color-mode', colorMode)
   Object.entries(colors).forEach((param) => {
     let [name, colorByTheme] = param;
