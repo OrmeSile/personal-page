@@ -9,5 +9,5 @@ if (window){
   const colorMode: string = getInitialColorMode();
   const root = document.documentElement;
 
-  root.style.setProperty('--initial-color-mode', colorMode)
+  root.style.setProperty('--color-mode', colorMode)
 }

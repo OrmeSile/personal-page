@@ -19,7 +19,12 @@ export const ColorModeToggle = () => {
   const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
-    const initialTheme = window.localStorage.getItem('color-mode')!
+    let initialTheme = window.localStorage.getItem('color-mode')
+    if(!initialTheme) {
+      initialTheme = document.documentElement.style.getPropertyValue('--color-mode')
+    }else if (!initialTheme) {
+      initialTheme = 'light'
+    }
     dispatch(init(initialTheme))
     setIsChecked(initialTheme === 'light')
     setIsClient(true)

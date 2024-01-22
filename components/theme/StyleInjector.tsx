@@ -5,14 +5,18 @@ import {Provider} from "react-redux";
 
 //forced to match minifier output to avoid a React SRR hydration error.
 //Notably, .contat() instead of a string literal
-export const setColorsByTheme = (currentColors? : typeof COLORS) => {
+export const setColorsByTheme = (currentColors?: typeof COLORS) => {
+  const root = document.documentElement
   const colors = currentColors ? currentColors : "12345678"
   const colorPreferenceFromLocalStorage = window.localStorage.getItem('color-mode')
   let colorMode = 'light';
-  if (colorPreferenceFromLocalStorage) colorMode = colorPreferenceFromLocalStorage
-  else if (window.matchMedia('(prefers-color-scheme: dark)').matches) colorMode = 'dark'
-  const root = document.documentElement
-//TODO fix ts error
+  if (colorPreferenceFromLocalStorage) {
+    colorMode = colorPreferenceFromLocalStorage
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    colorMode = 'dark'
+    window.localStorage.setItem('color-mode', colorMode)
+  }
+  root.style.setProperty('--color-mode', colorMode)
   Object.entries(colors).forEach((param) => {
     let [name, colorByTheme] = param;
     const cssVarName = "--".concat(name);
@@ -31,7 +35,6 @@ export const StyleInjector = () => {
   return <script dangerouslySetInnerHTML={{__html: calledFunction}}/>
 
 }
-
 
 
 export const FallbackStyles = () => {
