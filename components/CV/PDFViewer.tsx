@@ -3,8 +3,7 @@ import {Document, Page, pdfjs} from 'react-pdf'
 import {useEffect, useRef, useState} from "react";
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
-import pdf from '@/public/pdf/CV-rev.pdf'
-import fullPdf from '@/public/pdf/CV-rev-full.pdf'
+import pdfCV from '@/public/pdf/CV-rev.pdf'
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.js',
@@ -27,12 +26,12 @@ export const PDFViewer = () => {
 
   return (
     <div ref={containerRef}>
-      <a href={fullPdf} className={`linkButton`}
+      <a href={pdfCV} className={`linkButton`}
          download={'Vivien-L-Helguen-CV'}>
         Télécharger
       </a>
       <Document
-        file={pdf}>
+        file={pdfCV}>
         <Page
           width={width}
           pageNumber={1}
